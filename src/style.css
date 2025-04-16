@@ -1,0 +1,10 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+#id-navbar a {
+  background-color: blue;
+  color: white;
+  padding: 0.5rem;
+  text-decoration: none;
+  margin-right: 1rem;
+  border-radius: 4px;
+}

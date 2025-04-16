@@ -1,10 +1,23 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Homepage from "./pages/Homepage/Homepage";
+import Other from "./pages/Other/Other";
+
+import Navbar from "./components/Navbar";
+
 export default function App() {
   return (
     <div>
-      <h1>Überschrift 1</h1>
-      <h3>Überschrift 3</h3>
+      <Router>
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/other" element={<Other />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
