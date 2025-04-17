@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-#id-navbar {
+.navbar {
   height: 20px;
   width: 100% - 1rem;
 
@@ -11,22 +11,15 @@
   background-color: lightblue;
 }
 
-#id-navbar a {
+.navbar a {
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-}
 
-#id-navbar a:hover {
-  background-color: #444;
-}
-
-.navbar-element {
   font-size: 25px;
 }
 
-/*
-TASKS
-- create an own design (!)
-*/
+.navbar a:hover {
+  background-color: #444;
+}
