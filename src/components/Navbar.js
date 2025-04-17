@@ -5,12 +5,21 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
+  console.log("Navbar()");
+
   return (
     <div>
       <nav className={styles.navbar}>
         <Link to="/">Home</Link>
         <Link to="/other">Other</Link>
-        <Link to="/css-playground">CSS-Playground</Link>
+
+        <div className={styles.dropdown}>
+          <span className={styles["dropdown-btn"]}>CSS-Playground</span>
+          <div className={styles["dropdown-content"]}>
+            <Link to="/css-playground/text-and-font">Text & Font</Link>
+            <Link to="/css-playground/box-model">Box-Model</Link>
+          </div>
+        </div>
       </nav>
     </div>
   );

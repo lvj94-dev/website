@@ -25,7 +25,7 @@ export default function TextAndFont() {
   return (
     <div className={styles["textAndFont-wrapper"]}>
       <div className={styles.textAndFont}>
-        {/*Font Size*/}
+        {/* Font Size */}
         <label>
           Font Size
           <input
@@ -38,7 +38,7 @@ export default function TextAndFont() {
           <span>{styleState.fontSize}</span>
         </label>
 
-        {/*Font Weight*/}
+        {/* Font Weight */}
         <label>
           Font Weight
           <select
@@ -54,7 +54,7 @@ export default function TextAndFont() {
           </select>
         </label>
 
-        {/*Font Family*/}
+        {/* Font Family */}
         <label>
           Font Family
           <select
@@ -66,7 +66,7 @@ export default function TextAndFont() {
           </select>
         </label>
 
-        {/*Text Align*/}
+        {/* Text Align */}
         <label>
           <select
             value={styleState.textAlign}
@@ -79,7 +79,7 @@ export default function TextAndFont() {
           </select>
         </label>
 
-        {/*Color*/}
+        {/* Color */}
         <label>
           Color
           <input
@@ -90,7 +90,7 @@ export default function TextAndFont() {
         </label>
       </div>
 
-      {/*Preview*/}
+      {/* Preview */}
       <div
         style={styleState}
         contentEditable

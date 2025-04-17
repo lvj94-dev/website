@@ -1,14 +1,15 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import TextAndFont from "./components/TextAndFont";
+import { Outlet } from "react-router-dom";
 
 export default function CssPlayground() {
   return (
     <div>
       <h1>CSS-Playground</h1>
-      <p></p>
-      <TextAndFont />
-      <p></p>
+      <hr />
+      <h3>Text & Font</h3>
+      <hr />
+      <Outlet />
     </div>
   );
 }
