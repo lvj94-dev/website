@@ -1,8 +1,16 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import styles from "./TextAndFont.module.css";
+
+import ControlFontSize from "./controls/ControlFontSize";
+import ControlFontWeight from "./controls/ControlFontWeight";
+import ControlFontFamily from "./controls/ControlFontFamily";
+import ControlTextAlign from "./controls/ControlTextAlign";
+import ControlColor from "./controls/ControlColor";
+
+import VerticalLine from "../../../components/ui/VerticalLine/VerticalLine";
 
 const defaultStyle = {
   fontSize: "20px",
@@ -36,69 +44,34 @@ export default function TextAndFont() {
         <div className={styles["textAndFont-wrapper"]}>
           <div>
             {/* Font Size */}
-            <label>
-              Font Size
-              <input
-                type="range"
-                min="10"
-                max="100"
-                value={parseInt(styleState.fontSize)}
-                onChange={(e) => handleChange("fontSize", e.target.value, "px")}
-              />
-              <span>{styleState.fontSize}</span>
-            </label>
+            <ControlFontSize
+              value={styleState.fontSize}
+              onChange={handleChange}
+            />
 
             {/* Font Weight */}
-            <label>
-              Font Weight
-              <select
-                value={styleState.fontWeight}
-                onChange={(e) => handleChange("fontWeight", e.target.value)}
-              >
-                <option value="normal">Normal</option>
-                <option value="bold">Bold</option>
-                <option value="lighter">Lighter</option>
-                <option value="bolder">Bolder</option>
-                <option value="100">100</option>
-                <option value="900">900</option>
-              </select>
-            </label>
+            <ControlFontWeight
+              value={styleState.fontWeight}
+              onChange={handleChange}
+            />
 
             {/* Font Family */}
-            <label>
-              Font Family
-              <select
-                value={styleState.fontFamily}
-                onChange={(e) => handleChange("fontFamily", e.target.value)}
-              >
-                <option value="Arial">Arial</option>
-                <option value="'Times New Roman'">Times New Roman</option>
-              </select>
-            </label>
+            <ControlFontFamily
+              value={styleState.fontFamily}
+              onChange={handleChange}
+            />
 
             {/* Text Align */}
-            <label>
-              <select
-                value={styleState.textAlign}
-                onChange={(e) => handleChange("textAlign", e.target.value)}
-              >
-                <option value="left">Left</option>
-                <option value="center">Center</option>
-                <option value="right">Right</option>
-                <option value="justify">Justify</option>
-              </select>
-            </label>
+            <ControlTextAlign
+              value={styleState.textAlign}
+              onChange={handleChange}
+            />
 
             {/* Color */}
-            <label>
-              Color
-              <input
-                type="color"
-                value={styleState.color}
-                onChange={(e) => handleChange("color", e.target.value)}
-              />
-            </label>
+            <ControlColor value={styleState.color} onChange={handleChange} />
           </div>
+
+          <VerticalLine />
 
           {/* Preview */}
           <div
