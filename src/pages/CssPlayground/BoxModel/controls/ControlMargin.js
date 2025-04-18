@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import styles from "./controls.module.css";
+import styles from "../BoxModel.module.css";
 
 export default function ControlMargin({ value, onChange }) {
   console.log("ControlMargin()");

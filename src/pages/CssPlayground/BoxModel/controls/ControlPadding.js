@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import styles from "./controls.module.css";
+import styles from "../BoxModel.module.css";
 
 export default function ControlPadding({ value, onChange }) {
   console.log("ControlPadding()");
