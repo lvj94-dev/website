@@ -2,16 +2,16 @@
 
 import { Link } from "react-router-dom";
 
-import styles from "./Homepage.module.css";
+import styles from "./Home.module.css";
 
 import navButtonLinks from "./navButtonLinks.json";
 
-export default function Homepage() {
-  console.log("Homepage()");
+export default function Home() {
+  console.log("Home()");
 
   return (
     <>
-      <div className={styles.homepage}>
+      <div className={styles.home}>
         <h1>Homepage</h1>
 
         <hr />

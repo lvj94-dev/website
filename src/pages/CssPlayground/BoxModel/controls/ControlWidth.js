@@ -18,6 +18,8 @@ export default function ControlWidth({ value, onChange }) {
             onChange={(e) => onChange("width", e.target.value, "px")}
           />
         </label>
+
+        <span>{value}</span>
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
 import CssPlayground from "./pages/CssPlayground/CssPlayground";
-import Homepage from "./pages/Homepage/Homepage";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Other from "./pages/Other/Other";
 
@@ -22,7 +22,7 @@ export default function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/other" element={<Other />} />
 
           <Route path="/css-playground" element={<CssPlayground />}>
