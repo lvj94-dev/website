@@ -1,15 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+.textAndFont {
+  padding-top: 80px;
+
+  /*display: flex;
+  flex-direction: column;
+  gap: 1rem;*/
+}
+
 .textAndFont-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
-}
-
-.textAndFont {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .textAndFont label {

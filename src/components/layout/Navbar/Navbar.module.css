@@ -2,14 +2,15 @@
 
 /* Navbar */
 .navbar {
-  position: relative;
+  position: fixed;
 
   display: flex;
-  width: calc(100% - 2rem);
+  width: calc(100% - 3rem);
   height: 60px;
   padding: 1rem;
   gap: 1rem;
   align-items: center;
+  z-index: 1000;
 
   background-color: lightblue;
 }
@@ -71,4 +72,8 @@
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
   display: flex;
+}
+
+.spaceElement {
+  flex-grow: 1;
 }

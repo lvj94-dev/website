@@ -20,6 +20,9 @@ export default function Navbar() {
             <Link to="/css-playground/box-model">Box-Model</Link>
           </div>
         </div>
+
+        <div className={styles.spaceElement} />
+        <Link to="/login">Login</Link>
       </nav>
     </div>
   );

@@ -3,15 +3,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
-import Homepage from "./pages/Homepage/Homepage";
-import Other from "./pages/Other/Other";
 import CssPlayground from "./pages/CssPlayground/CssPlayground";
+import Homepage from "./pages/Homepage/Homepage";
+import Login from "./pages/Login/Login";
+import Other from "./pages/Other/Other";
 
-// Subpages
-import TextAndFont from "./pages/CssPlayground/subpages/TextAndFont";
-import BoxModel from "./pages/CssPlayground/subpages/BoxModel";
+// Subpages "CssPlayground"
+import BoxModel from "./pages/CssPlayground/BoxModel/BoxModel";
+import TextAndFont from "./pages/CssPlayground/TextAndFont/TextAndFont";
 
-import Navbar from "./components/Navbar";
+// Components
+import Navbar from "./components/layout/Navbar/Navbar";
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
             <Route path="text-and-font" element={<TextAndFont />} />
             <Route path="box-model" element={<BoxModel />} />
           </Route>
+
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>
