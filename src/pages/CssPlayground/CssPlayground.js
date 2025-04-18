@@ -7,8 +7,6 @@ export default function CssPlayground() {
     <div>
       <h1>CSS-Playground</h1>
       <hr />
-      <h3>Text & Font</h3>
-      <hr />
       <Outlet />
     </div>
   );

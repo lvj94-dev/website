@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 // TODO: chose 1. the same styling or 2. a separate one for each subpage
-import styles from "./TextAndFont.module.css";
+import styles from "./BoxModel.module.css";
 
 const defaultStyle = {
   width: "50px",
@@ -93,15 +93,15 @@ export default function BoxModel() {
             }
           />
         </label>
+      </div>
 
-        {/* Four Boxes */}
-        <div className={styles["boxModel-preview"]}>
-          {[1, 2, 3, 4].map((num) => (
-            <div key={num} style={styleState}>
-              Box {num}
-            </div>
-          ))}
-        </div>
+      {/* Preview */}
+      <div className={styles["boxModel-preview"]}>
+        {[1, 2, 3, 4].map((num) => (
+          <div key={num} style={styleState}>
+            Box {num}
+          </div>
+        ))}
       </div>
     </div>
   );

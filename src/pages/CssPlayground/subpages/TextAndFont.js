@@ -94,7 +94,7 @@ export default function TextAndFont() {
       <div
         style={styleState}
         contentEditable
-        className={styles["textAndFont-box"]}
+        className={styles["textAndFont-preview"]}
       >
         "Phantasie ist wichtiger als Wissen, denn Wissen ist begrenzt."
       </div>
