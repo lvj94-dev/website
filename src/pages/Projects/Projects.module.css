@@ -1,0 +1,13 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+.projects {
+  /*padding-top: 80px;*/
+}
+
+.projects a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 25px;
+}

@@ -1,0 +1,7 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+.pathbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}

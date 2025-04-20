@@ -2,35 +2,40 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Pages
-import CssPlayground from "./pages/CssPlayground/CssPlayground";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Other from "./pages/Other/Other";
-
-// Subpages "CssPlayground"
-import BoxModel from "./pages/CssPlayground/BoxModel/BoxModel";
-import TextAndFont from "./pages/CssPlayground/TextAndFont/TextAndFont";
-
 // Components
-import Navbar from "./components/layout/Navbar/Navbar";
+import Layout from "./components/layout/Layout/Layout";
+
+// Pages
+import Home from "./pages/Home/Home";
+import Projects from "./pages/Projects/Projects";
+import Components from "./pages/Components/Components";
+import Login from "./pages/Login/Login";
+
+// Page "Projects"
+import CssPlayground from "./pages/Projects/CssPlayground/CssPlayground";
+import Games from "./pages/Projects/Games/Games";
+import Maths from "./pages/Projects/Maths/Maths";
 
 export default function App() {
+  console.log("App()");
+
   return (
     <div>
       <Router>
-        <Navbar />
-
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/other" element={<Other />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="home" element={<Home />} />
+            <Route path="components" element={<Components />} />
 
-          <Route path="/css-playground" element={<CssPlayground />}>
-            <Route path="text-and-font" element={<TextAndFont />} />
-            <Route path="box-model" element={<BoxModel />} />
+            <Route path="projects" element={<Projects />}>
+              <Route path="css-playground" element={<CssPlayground />}>
+                <Route path="games" element={<Games />} />
+                <Route path="maths" element={<Maths />} />
+              </Route>
+            </Route>
+
+            <Route path="/login" element={<Login />} />
           </Route>
-
-          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>

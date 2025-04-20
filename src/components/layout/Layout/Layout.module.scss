@@ -1,0 +1,67 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+/* VARIABLES */
+/* global values */
+$layout-padding: 8px;
+$navbar-height: 60px;
+$pathbar-height: 30px;
+$footer-height: 30px;
+/* calculations */
+$layout-width: calc(100% - #{2 * $layout-padding});
+$main-margin-top: calc(
+  $navbar-height + $pathbar-height + $layout-padding + 2px
+);
+$main-margin-bottom: calc($footer-height + $layout-padding);
+
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  padding: $layout-padding;
+}
+
+/* GRID */
+.header {
+  position: fixed;
+  width: $layout-width;
+
+  .layout-navbar {
+    height: $navbar-height;
+    background-color: lightblue;
+  }
+
+  .layout-pathbar {
+    height: $pathbar-height;
+    background-color: white;
+  }
+}
+
+.main {
+  flex: 1;
+  overflow: auto;
+  margin-top: $main-margin-top;
+  margin-bottom: $main-margin-bottom;
+}
+
+.layout-footer {
+  position: fixed;
+  bottom: $layout-padding;
+  display: flex;
+  height: $footer-height;
+  width: $layout-width;
+  margin-top: 10px;
+  background-color: lightblue;
+}
+
+/* DEBUGGING */
+.main {
+  border: 1px solid black;
+}

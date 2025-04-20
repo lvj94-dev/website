@@ -1,28 +1,55 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
   console.log("Navbar()");
 
-  return (
-    <div>
-      <nav className={styles.navbar}>
-        <Link to="/">Home</Link>
-        <Link to="/other">Other</Link>
+  const location = useLocation();
+  const subpage = location.pathname.split("/").filter(Boolean).pop();
 
-        <div className={styles.dropdown}>
-          <span className={styles["dropdown-btn"]}>CSS-Playground</span>
-          <div className={styles["dropdown-content"]}>
-            <Link to="/css-playground/text-and-font">Text & Font</Link>
-            <Link to="/css-playground/box-model">Box-Model</Link>
-          </div>
-        </div>
+  return (
+    <div className={styles.navbar}>
+      <nav>
+        {/* HOME */}
+        <NavLink
+          to="/home"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Home
+        </NavLink>
+
+        {/* PROJECTS */}
+        <NavLink
+          to="/projects"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Projects
+        </NavLink>
+
+        {/* COMPONENTS */}
+        <NavLink
+          to="/components"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Components
+        </NavLink>
 
         <div className={styles.spaceElement} />
-        <Link to="/login">Login</Link>
+
+        <div>{subpage}</div>
+
+        <div className={styles.spaceElement} />
+
+        {/* LOGIN */}
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Login
+        </NavLink>
       </nav>
     </div>
   );

@@ -1,0 +1,38 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+/* VARIABLES */
+$active-background-color: #444;
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  a {
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: $active-background-color;
+  }
+}
+
+.spaceElement {
+  flex-grow: 1;
+}
+
+.active {
+  background-color: $active-background-color;
+  color: #fff;
+}
