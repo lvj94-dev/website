@@ -9,9 +9,9 @@ export default function MapLinks({ source }) {
     <>
       <div>
         {source.map(({ to, label }) => (
-          <div key={to}>
+          <span key={to}>
             <Link to={to}>{label}</Link>
-          </div>
+          </span>
         ))}
       </div>
     </>

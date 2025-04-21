@@ -5,6 +5,7 @@ import Blog from "../pages/Blog/Blog";
 export const routesBlog = [
   {
     path: "/blog",
+    label: "Blog",
     element: <Blog />,
   },
 ];

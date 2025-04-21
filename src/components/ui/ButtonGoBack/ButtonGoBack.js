@@ -2,7 +2,7 @@
 
 import styles from "./ButtonGoBack.module.scss";
 
-import useCollectionUrl from "../../hooks/useCollectionUrl";
+import useCollectionUrl from "../../../hooks/useCollectionUrl";
 
 export default function ButtonGoBack() {
   console.log("ButtonGoBack()");

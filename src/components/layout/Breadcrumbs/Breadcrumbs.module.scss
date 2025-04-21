@@ -1,4 +1,29 @@
 /* Author: Lucas Vincent Johanningmeier */
 
 .breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding-left: 10px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+
+    &:not(:first-child)::before {
+      content: ">";
+      margin: 0 0.5rem;
+      color: #999;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

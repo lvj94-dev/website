@@ -24,10 +24,6 @@ export default function Projects() {
         </nav>
 
         <Outlet />
-        {/*<h3>Maths</h3>
-        <MapLinks source={linksProjectsMaths} />
-        <h3>CSS-Playground</h3>
-        <MapLinks source={linksProjectsCssPlayground} />*/}
       </div>
     </>
   );

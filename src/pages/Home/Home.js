@@ -22,22 +22,35 @@ export default function Home() {
         <hr />
         <h3>TODO</h3>
         <ul>
+          {/* (T) Tasks */}
           <li>(T) Show basic information about me and my project</li>
           <li style={{ visibility: "hidden" }} />
+
+          {/* (P) Projects */}
           <li>(P) Show source-code</li>
           <li>(P) Include "Return"-button // go back to the previous page</li>
           <li>(P) Create a chess-game</li>
           <li>(P) Create a blog</li>
           <li>(P) Create tiles to present each project</li>
           <li>(P) Replace "Home" with a logo</li>
+          <li>
+            (P) Replace div-tags with nav-tags (where needed) // nav
+            aria-label="description"; 1. breadcrumb => refers to the concept; 2.
+            refers to the visuals; WAI-ARIA Authoring Practices
+          </li>
           <li style={{ visibility: "hidden" }} />
+
+          {/* (R) Research */}
           <li>(R) SCSS =&gt; generate dynamic class names</li>
           <li>(R) CSS =&gt; "Concentric CSS" ordering standard</li>
           <li>
             (R) React Hooks // = reusable logic that depends on React's
             context/state
           </li>
+          <li>WAI-ARIA Authoring Practices</li>
           <li style={{ visibility: "hidden" }} />
+
+          {/* else */}
           <li>
             idea: why not externalize default-values for various sites (i.e. for
             the controls)
@@ -51,6 +64,8 @@ export default function Home() {
             HOW to deactivate the error-message "Do not use empty rulesets" ?
           </li>
           <li style={{ visibility: "hidden" }} />
+
+          {/* DEBUGGING */}
           <li>WILD CARD</li>
           <li>WILD CARD</li>
           <li>WILD CARD</li>
