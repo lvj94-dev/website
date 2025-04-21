@@ -15,6 +15,9 @@ export default function Home() {
         <hr />
         <h3>Projects</h3>
         <p />
+        <ul>
+          <li>https://github.com/lvj94-dev/website</li>
+        </ul>
 
         <hr />
         <h3>TODO</h3>

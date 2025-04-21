@@ -4,11 +4,12 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import styles from "./Navbar.module.scss";
 
+import useCollectionUrl from "../../hooks/useCollectionUrl";
+
 export default function Navbar() {
   console.log("Navbar()");
 
-  const location = useLocation();
-  const subpage = location.pathname.split("/").filter(Boolean).pop();
+  const { currentPage } = useCollectionUrl();
 
   return (
     <div className={styles.navbar}>
@@ -47,7 +48,7 @@ export default function Navbar() {
 
         <div className={styles.spaceElement} />
 
-        <div>{subpage}</div>
+        <div>{currentPage}</div>
 
         <div className={styles.spaceElement} />
 
