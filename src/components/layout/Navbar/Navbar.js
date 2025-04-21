@@ -37,6 +37,14 @@ export default function Navbar() {
           Components
         </NavLink>
 
+        {/* BLOG */}
+        <NavLink
+          to="/blog"
+          className={({ isActive }) => (isActive ? styles.active : undefined)}
+        >
+          Blog
+        </NavLink>
+
         <div className={styles.spaceElement} />
 
         <div>{subpage}</div>

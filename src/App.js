@@ -9,6 +9,7 @@ import Layout from "./components/layout/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
 import Components from "./pages/Components/Components";
+import Blog from "./pages/Blog/Blog";
 import Login from "./pages/Login/Login";
 
 // Page "Projects"
@@ -28,11 +29,12 @@ export default function App() {
             <Route path="components" element={<Components />} />
 
             <Route path="projects" element={<Projects />}>
-              <Route path="css-playground" element={<CssPlayground />}>
-                <Route path="games" element={<Games />} />
-                <Route path="maths" element={<Maths />} />
-              </Route>
+              <Route path="css-playground" element={<CssPlayground />} />
+              <Route path="games" element={<Games />} />
+              <Route path="maths" element={<Maths />} />
             </Route>
+
+            <Route path="blog" element={<Blog />} />
 
             <Route path="/login" element={<Login />} />
           </Route>
