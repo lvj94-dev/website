@@ -6,6 +6,7 @@ export const routesComponents = [
   {
     path: "/components",
     label: "Components",
+    protected: false,
     element: <Components />,
   },
 ];

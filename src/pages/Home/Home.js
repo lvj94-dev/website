@@ -35,9 +35,11 @@ export default function Home() {
           <li>(P) Replace "Home" with a logo</li>
           <li>
             (P) Replace div-tags with nav-tags (where needed) // nav
-            aria-label="description"; 1. breadcrumb => refers to the concept; 2.
-            refers to the visuals; WAI-ARIA Authoring Practices
+            aria-label="description"; 1. breadcrumb =&gt; refers to the concept;
+            2. refers to the visuals; WAI-ARIA Authoring Practices
           </li>
+          <li>(P) Middleware "ProtectedRoutes"</li>
+          <li>(P) [routes.js] swap Layout-module with landing-page</li>
           <li style={{ visibility: "hidden" }} />
 
           {/* (R) Research */}

@@ -6,6 +6,7 @@ export const routesHome = [
   {
     path: "/home",
     label: "Home",
+    protected: false,
     element: <Home />,
   },
 ];

@@ -6,6 +6,7 @@ export const routesLogin = [
   {
     path: "/login",
     label: "Login",
+    protected: false,
     element: <Login />,
   },
 ];

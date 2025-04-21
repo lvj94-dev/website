@@ -10,15 +10,17 @@ export const routesProjects = [
   {
     path: "/projects",
     label: "Projects",
+    protected: false,
     element: <Projects />,
     children: [
       {
         path: "css-playground",
         label: "CSS-Playground",
+        protected: false,
         element: <CssPlayground />,
       },
-      { path: "games", label: "Games", element: <Games /> },
-      { path: "maths", label: "Maths", element: <Maths /> },
+      { path: "games", label: "Games", protected: false, element: <Games /> },
+      { path: "maths", label: "Maths", protected: false, element: <Maths /> },
     ],
   },
 ];

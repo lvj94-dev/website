@@ -22,3 +22,8 @@ export const findRouteBySegment = (segment, routes) => {
   // case 3: not found
   return null;
 };
+
+/**
+ * NOTES
+ * - the problem is that with this approach not two segments can have the same name (!) => WHAT TO DO ?
+ */
