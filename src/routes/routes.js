@@ -28,6 +28,7 @@ export const routes = [
         path: "404",
         label: "Not Found",
         protected: false,
+        element: <NotFound />,
       },
       {
         path: "*",

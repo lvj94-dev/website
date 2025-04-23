@@ -1,5 +1,20 @@
 /* Author: Lucas Vincent Johanningmeier */
 
 .home {
-  /*padding-top: 80px;*/
+  display: flex;
+
+  .home-left,
+  .home-right {
+    flex: 1;
+  }
+}
+
+/* DEBUGGING */
+.home-left,
+.home-right {
+  padding: 10px;
+  margin: 10px;
+  padding-left: 20px;
+
+  border: 1px solid black;
 }

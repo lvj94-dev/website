@@ -1,0 +1,31 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+/* VARIABLES */
+$section-padding: 0.5rem;
+$section-background-color: #e7e7e7;
+
+.layoutMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  .sectionOne {
+    min-height: 60px;
+    padding: $section-padding;
+    background-color: $section-background-color;
+  }
+
+  .sectionTwo {
+    flex: 1 1 auto;
+    padding: $section-padding;
+    background-color: $section-background-color;
+    flex-grow: 1;
+  }
+
+  .sectionThree {
+    min-height: 60px;
+    padding: $section-padding;
+    background-color: $section-background-color;
+  }
+}

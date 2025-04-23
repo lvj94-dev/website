@@ -1,5 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+import LayoutMain from "../../components/layout/LayoutMain/LayoutMain";
 import styles from "./Components.module.css";
 
 export default function Components() {
@@ -8,7 +9,7 @@ export default function Components() {
   return (
     <>
       <div className={styles.components}>
-        <h1>Components</h1>
+        <LayoutMain />
       </div>
     </>
   );
