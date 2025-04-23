@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import Home from "../pages/Home/Home";
+import Home from "@/pages/Home/Home";
 
 export const routesHome = [
   {

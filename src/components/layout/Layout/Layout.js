@@ -2,8 +2,8 @@
 
 import { Outlet } from "react-router-dom";
 
-import Navbar from "../Navbar/Navbar";
-import Pathbar from "../Pathbar/Pathbar";
+import Navbar from "@/components/layout/Navbar/Navbar";
+import Pathbar from "@/components/layout/Pathbar/Pathbar";
 
 import styles from "./Layout.module.scss";
 

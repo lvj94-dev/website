@@ -2,9 +2,9 @@
 
 import Projects from "../pages/Projects/Projects";
 
-import CssPlayground from "../pages/Projects/CssPlayground/CssPlayground";
-import Games from "../pages/Projects/Games/Games";
-import Maths from "../pages/Projects/Maths/Maths";
+import CssPlayground from "@/pages/Projects/CssPlayground/CssPlayground";
+import Games from "@/pages/Projects/Games/Games";
+import Maths from "@/pages/Projects/Maths/Maths";
 
 export const routesProjects = [
   {

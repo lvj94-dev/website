@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import Components from "../pages/Components/Components";
+import Components from "@/pages/Components/Components";
 
 export const routesComponents = [
   {

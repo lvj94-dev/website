@@ -2,9 +2,9 @@
 
 import styles from "./Breadcrumbs.module.scss";
 
-import useCollectionUrl from "../../../hooks/useCollectionUrl";
-import MapLinks from "../../ui/MapLinks/MapLinks";
-import { findRouteBySegment } from "../../../utils/findRouteBySegment";
+import useCollectionUrl from "@/hooks/useCollectionUrl";
+import MapLinks from "@/components/ui/MapLinks/MapLinks";
+import { findRouteBySegment } from "@/utils/findRouteBySegment";
 
 import { routes } from "../../../routes/routes";
 

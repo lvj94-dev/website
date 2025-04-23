@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import styles from "./Navbar.module.scss";
 
-import useCollectionUrl from "../../../hooks/useCollectionUrl";
+import useCollectionUrl from "@/hooks/useCollectionUrl";
 
 export default function Navbar() {
   console.log("Navbar()");

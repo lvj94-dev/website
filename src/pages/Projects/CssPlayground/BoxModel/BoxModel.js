@@ -11,7 +11,7 @@ import ControlPadding from "./controls/ControlPadding";
 import ControlMargin from "./controls/ControlMargin";
 import ControlBorderWidth from "./controls/ControlBorderWidth";
 
-import VerticalLine from "../../../components/ui/VerticalLine/VerticalLine";
+import VerticalLine from "@/components/ui/VerticalLine/VerticalLine";
 
 const defaultStyle = {
   width: "50px",

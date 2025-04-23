@@ -2,12 +2,12 @@
 
 import { Link, Outlet } from "react-router-dom";
 
-import MapLinks from "../../components/ui/MapLinks/MapLinks";
+import MapLinks from "@/components/ui/MapLinks/MapLinks";
 
 import styles from "./Projects.module.css";
 
-import linksProjectsCssPlayground from "../../data/links-projects-css-playground.json";
-import linksProjectsMaths from "../../data/links-projects-maths.json";
+import linksProjectsCssPlayground from "@/data/links-projects-css-playground.json";
+import linksProjectsMaths from "@/data/links-projects-maths.json";
 
 export default function Projects() {
   console.log("Projects()");

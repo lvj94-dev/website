@@ -38,3 +38,8 @@ export default function LayoutMain() {
     </>
   );
 }
+
+/**
+ * NOTES
+ * - when there are multiple elements included under one wrapper both elements will have the same size
+ */

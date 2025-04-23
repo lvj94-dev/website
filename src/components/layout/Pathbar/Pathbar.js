@@ -2,8 +2,8 @@
 
 import styles from "./Pathbar.module.css";
 
-import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
-import ButtonGoBack from "../../ui/ButtonGoBack/ButtonGoBack";
+import Breadcrumbs from "@/components/layout/Breadcrumbs/Breadcrumbs";
+import ButtonGoBack from "@/components/ui/ButtonGoBack/ButtonGoBack";
 
 export default function Pathbar() {
   console.log("Pathbar()");

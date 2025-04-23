@@ -10,7 +10,7 @@ import ControlFontFamily from "./controls/ControlFontFamily";
 import ControlTextAlign from "./controls/ControlTextAlign";
 import ControlColor from "./controls/ControlColor";
 
-import VerticalLine from "../../../components/ui/VerticalLine/VerticalLine";
+import VerticalLine from "@/components/ui/VerticalLine/VerticalLine";
 
 const defaultStyle = {
   fontSize: "20px",

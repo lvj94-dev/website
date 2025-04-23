@@ -10,7 +10,7 @@ import { routesComponents } from "./routesComponents";
 import { routesBlog } from "./routesBlog";
 import { routesLogin } from "./routesLogin";
 
-import NotFound from "../pages/NotFound/NotFound";
+import NotFound from "@/pages/NotFound/NotFound";
 
 export const routes = [
   {

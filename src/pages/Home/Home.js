@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import LayoutMain from "../../components/layout/LayoutMain/LayoutMain";
+import LayoutMain from "@/components/layout/LayoutMain/LayoutMain";
 import styles from "./Home.module.css";
 
 export default function Home() {
