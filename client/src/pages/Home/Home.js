@@ -59,6 +59,8 @@ export default function Home() {
               [globals.module.css]
             </li>
             <li>(T) Footer: "Back to top"-button</li>
+            <li>(T) CREATE a CV</li>
+            <li>(T) CREATE a contact form</li>
             <li style={{ visibility: "hidden" }} />
 
             {/* (R) Research */}

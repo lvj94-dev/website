@@ -10,6 +10,8 @@ import { routesComponents } from "./routesComponents";
 import { routesBlog } from "./routesBlog";
 import { routesLogin } from "./routesLogin";
 
+import { routesContact } from "./routesContact";
+
 import NotFound from "@/pages/NotFound/NotFound";
 
 export const routes = [
@@ -24,6 +26,7 @@ export const routes = [
       ...routesComponents,
       ...routesBlog,
       ...routesLogin,
+      ...routesContact,
       {
         path: "404",
         label: "Not Found",

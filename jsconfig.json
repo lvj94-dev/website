@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "client/src",
     "target": "es6",
     "paths": {
       "@/*": ["*"]
     }
   },
-  "include": ["src"]
+  "include": ["client/src"]
 }
