@@ -1,4 +1,23 @@
 /* Author: Lucas Vincent Johanningmeier */
 
 .footer {
+  display: flex;
+  justify-content: center; // centers horizontally
+  align-items: center; // centers vertically
+  gap: 1rem;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
 }

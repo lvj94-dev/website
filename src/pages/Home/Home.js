@@ -30,7 +30,6 @@ export default function Home() {
 
             {/* (P) Projects */}
             <li>(P) Show source-code</li>
-            <li>(P) Include "Return"-button // go back to the previous page</li>
             <li>(P) Create a chess-game</li>
             <li>(P) Create a blog // text-editor</li>
             <li>(P) Create tiles to present each project</li>
@@ -47,6 +46,10 @@ export default function Home() {
               (P) implement a good logging-tool AND delete the
               "console.log()"-calls (!)
             </li>
+            <li>(P) Impressum</li>
+            <li>(P) different languages (DE, EN, FR?, RU?)</li>
+            <li>(P) Dark Mode (?)</li>
+            <li>(P) E-mail service: contact me~</li>
             <li style={{ visibility: "hidden" }} />
             <li>
               (T) refactor [componentsConfig.js] =&gt; bundle various categories
@@ -55,6 +58,7 @@ export default function Home() {
               (T) keep EITHER [scss/main.scss] OR [styles/global.module.scss] OR
               [globals.module.css]
             </li>
+            <li>(T) Footer: "Back to top"-button</li>
             <li style={{ visibility: "hidden" }} />
 
             {/* (R) Research */}
@@ -80,6 +84,10 @@ export default function Home() {
             <li>
               HOW to deactivate the error-message "Do not use empty rulesets" ?
             </li>
+            <li style={{ visibility: "hidden" }} />
+
+            {/* Notes */}
+            <li>NavLink-elements are for internal links (!)</li>
             <li style={{ visibility: "hidden" }} />
 
             {/* DEBUGGING */}

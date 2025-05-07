@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Pathbar from "@/components/layout/Pathbar/Pathbar";
+import Footer from "@/components/layout/Footer/Footer";
 
 import styles from "./Layout.module.scss";
 
@@ -28,7 +29,7 @@ export default function Layout() {
 
         <footer className={styles["layout-footer"]}>
           {/*<Footer />*/}
-          <div>Footer</div>
+          <Footer />
         </footer>
       </div>
     </>
