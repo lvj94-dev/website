@@ -1,0 +1,22 @@
+/* Author: Lucas Vincent Johanningmeier */
+
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.EMAIL_USER_RESEND);
+
+exports.sendMail = async (name, email, message) => {
+  try {
+    const data = await resend.emails.send({
+      from: `${name} <lucas.johanningmeier@resend.com>`,
+      to: email,
+      subject: "Testing my contact form",
+      text: message,
+    });
+
+    console.log("E-mail sent: ", data);
+    return data;
+  } catch (error) {
+    console.error("Error sending e-mail: ", error);
+    throw error;
+  }
+};

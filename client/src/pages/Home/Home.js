@@ -71,6 +71,9 @@ export default function Home() {
               context/state
             </li>
             <li>WAI-ARIA Authoring Practices</li>
+            <li>
+              (R) concurrently =&gt; run client and server at the same time !~?
+            </li>
             <li style={{ visibility: "hidden" }} />
 
             {/* else */}

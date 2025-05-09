@@ -1,37 +1,57 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+import { useState } from "react";
+import axios from "axios";
+
 import styles from "./contact.module.scss";
 
-export default function Contact() {
-  console.log("Contact()");
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    to: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post("/api/contact/gmail", formData);
+    alert("E-mail sent!");
+  };
 
   return (
     <>
-      <div className={styles.contact}>
-        <h1>Contact form</h1>
-        <form>
-          {/* Name */}
-          <form className={styles["form-group"]}>
-            <label for="name">Name *</label>
-            <input type="text" id="contact-form-name" required></input>
-          </form>
-
-          {/* E-Mail* */}
-          <form className={styles["form-group"]}>
-            <label for="email">E-Mail *</label>
-            <input type="email" id="contact-form-email" required></input>
-          </form>
-
-          {/* Message */}
-          <form className={styles["form-group"]}>
-            <label for="message">Message *</label>
-            <input type="text" id="contact-form-message" required></input>
-          </form>
-
-          {/* Button "Submit" */}
-          <div className={styles["form-group"]}>
-            <button type="submit">Send Message</button>
-          </div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="senderName"
+            placeholder="Your name"
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="to"
+            placeholder="Your e-mail address"
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="subject"
+            placeholder="Your subject"
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your message"
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">Send e-mail</button>
         </form>
       </div>
     </>
