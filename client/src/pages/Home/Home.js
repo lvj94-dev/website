@@ -49,7 +49,9 @@ export default function Home() {
             <li>(P) Impressum</li>
             <li>(P) different languages (DE, EN, FR?, RU?)</li>
             <li>(P) Dark Mode (?)</li>
-            <li>(P) E-mail service: contact me~</li>
+            <li>
+              <s>(P) E-mail service: contact me~</s>
+            </li>
             <li style={{ visibility: "hidden" }} />
             <li>
               (T) refactor [componentsConfig.js] =&gt; bundle various categories
@@ -60,7 +62,10 @@ export default function Home() {
             </li>
             <li>(T) Footer: "Back to top"-button</li>
             <li>(T) CREATE a CV</li>
-            <li>(T) CREATE a contact form</li>
+            <li>
+              <s>(T) CREATE a contact form</s>
+            </li>
+            <li>(T) Generalize the mail-service</li>
             <li style={{ visibility: "hidden" }} />
 
             {/* (R) Research */}
@@ -72,7 +77,10 @@ export default function Home() {
             </li>
             <li>WAI-ARIA Authoring Practices</li>
             <li>
-              (R) concurrently =&gt; run client and server at the same time !~?
+              <s>
+                (R) concurrently =&gt; run client and server at the same time
+                !~?
+              </s>
             </li>
             <li style={{ visibility: "hidden" }} />
 
