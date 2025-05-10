@@ -66,6 +66,24 @@ export default function Home() {
               <s>(T) CREATE a contact form</s>
             </li>
             <li>(T) Generalize the mail-service</li>
+            <li>(T) split config-files into 'root' and 'config'-folder</li>
+
+            <li>
+              (T) REMOVE "module-alias" and USE "Babel" or "TS"
+              <ul>
+                <li>
+                  without Babel or TS : relative imports, NOT with aliases such
+                  as "@"
+                </li>
+                <li>
+                  "if you want to use module-alias with @/, remove 'type':
+                  'module' and rewrite your code with CommonJS syntax (const
+                  express = require('express');)
+                </li>
+                <li>...</li>
+              </ul>
+            </li>
+
             <li style={{ visibility: "hidden" }} />
 
             {/* (R) Research */}
