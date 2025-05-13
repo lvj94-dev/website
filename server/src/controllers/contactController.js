@@ -9,7 +9,6 @@ export const mailServiceGmail = async (req, res) => {
     await sendMailGmail({ senderName, to, subject, message, replyTo });
     res.status(200).json({ message: "E-Mail sent successfully!" });
   } catch (error) {
-    console.error("Error sending e-mail: ", error);
     res.status(500).json({ error: "Error sending e-mail!" });
   }
 };

@@ -2,10 +2,10 @@
 
 import express from "express";
 
-import { mailServiceGmail } from "../controllers/contactController.js";
+import { loginUser } from "../controllers/authController.js";
 
 const router = express.Router();
 
-router.post("/gmail", mailServiceGmail);
+router.post("/login", loginUser);
 
 export default router;

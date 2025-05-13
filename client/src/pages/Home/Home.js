@@ -67,6 +67,12 @@ export default function Home() {
             </li>
             <li>(T) Generalize the mail-service</li>
             <li>(T) split config-files into 'root' and 'config'-folder</li>
+            <li>(T) Create a password-generator</li>
+            <li>(T) Create a password-manager</li>
+            <li>
+              (T) Rewrite "authService.js" so that it can handle user-creation
+            </li>
+            <li>Create either self-made tags or use classes for this</li>
 
             <li>
               (T) REMOVE "module-alias" and USE "Babel" or "TS"
