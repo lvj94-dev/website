@@ -8,8 +8,8 @@ import { routesHome } from "./routesHome";
 import { routesProjects } from "./routesProjects";
 import { routesComponents } from "./routesComponents";
 import { routesBlog } from "./routesBlog";
+import { routesAccount } from "./routesAccount";
 import { routesLogin } from "./routesLogin";
-
 import { routesContact } from "./routesContact";
 
 import NotFound from "@/pages/NotFound/NotFound";
@@ -25,6 +25,7 @@ export const routes = [
       ...routesProjects,
       ...routesComponents,
       ...routesBlog,
+      ...routesAccount,
       ...routesLogin,
       ...routesContact,
       {
@@ -35,7 +36,7 @@ export const routes = [
       },
       {
         path: "*",
-        label: "wildcard",
+        label: "Wildcard",
         protected: false,
         element: <Navigate to="/404" replace />,
       },

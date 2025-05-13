@@ -1,6 +1,7 @@
 /* Author: Lucas Vincent Johanningmeier */
 
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { AuthContext } from "../../context/AuthContext";
@@ -15,6 +16,8 @@ export default function Login() {
 
   const { setToken } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -26,6 +29,8 @@ export default function Login() {
 
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
+
+      navigate("/account");
     } catch (err) {
       alert(`Login failed: ${err.response?.data?.message || err.message}`);
     }

@@ -1,14 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+import { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-import styles from "./Navbar.module.scss";
+import { AuthContext } from "@/context/AuthContext";
 
 import useCollectionUrl from "@/hooks/useCollectionUrl";
+
+import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
   console.log("Navbar()");
 
+  const { token } = useContext(AuthContext);
   const { currentPage } = useCollectionUrl();
 
   return (
@@ -53,12 +57,21 @@ export default function Navbar() {
         <div className={styles.spaceElement} />
 
         {/* LOGIN */}
-        <NavLink
-          to="/login"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
-        >
-          Login
-        </NavLink>
+        {token ? (
+          <NavLink
+            to="/account"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            My Account
+          </NavLink>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive }) => (isActive ? styles.active : undefined)}
+          >
+            Login
+          </NavLink>
+        )}
       </nav>
     </div>
   );
