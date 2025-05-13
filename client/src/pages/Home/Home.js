@@ -90,6 +90,10 @@ export default function Home() {
               </ul>
             </li>
 
+            {/* Protected Routes */}
+            <li>(T) decide which routes to make "protected: true"</li>
+            <li>(T) create an in-between page "Login required"</li>
+
             <li style={{ visibility: "hidden" }} />
 
             {/* (R) Research */}

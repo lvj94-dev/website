@@ -1,15 +1,19 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+
+import { AuthContext } from "../../context/AuthContext";
 
 import styles from "./Login.module.css";
 
-export default function Login({ setToken }) {
+export default function Login() {
   console.log("Login()");
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const { setToken } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,10 +23,9 @@ export default function Login({ setToken }) {
         username,
         password,
       });
+
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
-      console.log(`username: ${username}`);
-      console.log(`password: ${password}`);
     } catch (err) {
       alert(`Login failed: ${err.response?.data?.message || err.message}`);
     }

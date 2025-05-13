@@ -6,7 +6,7 @@ export const routesBlog = [
   {
     path: "/blog",
     label: "Blog",
-    protected: false,
+    protected: true,
     element: <Blog />,
   },
 ];
