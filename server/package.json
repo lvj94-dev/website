@@ -10,12 +10,14 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "module-alias": "^2.2.3",
-    "nodemailer": "^7.0.3"
+    "nodemailer": "^7.0.3",
+    "sqlite3": "^5.1.7"
   },
   "_moduleAliases": {
     "@": "src"
   },
   "scripts": {
-    "start": "node -r module-alias/register server.js"
+    "start": "node -r module-alias/register server.js",
+    "init-db": "psql -U user -d authdb -f ./sql/crate_tables.sql"
   }
 }

@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import { Contact } from "@/pages/Contact/Contact";
-
 import styles from "./Footer.module.scss";
 
 export default function Footer() {

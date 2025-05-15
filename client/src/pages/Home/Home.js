@@ -93,6 +93,10 @@ export default function Home() {
             {/* Protected Routes */}
             <li>(T) decide which routes to make "protected: true"</li>
             <li>(T) create an in-between page "Login required"</li>
+            <li>
+              (T) Create a page "Unauthorized" to handle attempt to access
+              unauthorized pages
+            </li>
 
             <li style={{ visibility: "hidden" }} />
 

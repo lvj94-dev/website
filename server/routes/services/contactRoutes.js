@@ -2,7 +2,7 @@
 
 import express from "express";
 
-import { mailServiceGmail } from "../controllers/contactController.js";
+import { mailServiceGmail } from "../../src/controllers/contactController.js";
 
 const router = express.Router();
 

@@ -19,7 +19,6 @@ export default function Account() {
   return (
     <>
       <div className={styles.account}>
-        Account
         <button onClick={handleLogout}>Logout</button>
       </div>
     </>

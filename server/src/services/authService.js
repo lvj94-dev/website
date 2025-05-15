@@ -3,16 +3,14 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+/* for test-purposes only */
 const dummyUser = {
-  id: 0,
+  id: 1,
   username: "user",
-  passwordHash: process.env.PASSWORD_DEV_HASH,
+  passwordHash: process.env.PASSWORD_USER_HASH,
 };
 
-console.log(dummyUser.passwordHash);
-
 export const authenticateUser = async (username, password) => {
-  console.log(dummyUser.passwordHash);
   if (
     username !== dummyUser.username ||
     !bcrypt.compareSync(password, dummyUser.passwordHash)
