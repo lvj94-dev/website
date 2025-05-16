@@ -2,11 +2,13 @@
 
 import jwt from "jsonwebtoken";
 
+import { UnauthorizedError, ForbiddenError } from "../errors/index.js";
+
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
 
   if (!token) {
-    return res.status(401).json({ message: "No token provided" });
+    return next(new UnauthorizedError("No token provided")); // 401
   }
 
   try {
@@ -14,7 +16,7 @@ const authMiddleware = (req, res, next) => {
     req.user = jwtData;
     next();
   } catch (err) {
-    res.status(403).json({ message: "Invalid or expired token" });
+    return next(new ForbiddenError("Invalid or expired token")); // 403
   }
 };
 

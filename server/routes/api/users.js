@@ -6,14 +6,16 @@ import bcrypt from "bcrypt";
 import db from "../../db/database.js";
 import { createUser, getAllUsers } from "../../db/queries/users.js";
 
+import { ValidationError, HttpError } from "../../src/errors/index.js";
+
 const router = express.Router();
 
-// createUser()
+// POST /api/users - createUser()
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    return res.status(400).json({ error: "Missing username or password!" });
+    return next(new ValidationError("Username and password are required.")); // 400
   }
 
   try {
@@ -22,12 +24,14 @@ router.post("/", async (req, res) => {
 
     res.status(201).json(user);
   } catch (err) {
-    console.error("Signup error:", err);
-    res.status(500).json({ error: err.message });
+    if (err.message.includes("UNIQUE constriant failed")) {
+      return next(new ValidationError("Username already exists.")); // 400
+    }
+    next(new HttpError()); // 500
   }
 });
 
-// getAllUsers()
+// GET /api/users - getAllUsers()
 router.get("/", async (req, res) => {
   try {
     const users = await getAllUsers(db);

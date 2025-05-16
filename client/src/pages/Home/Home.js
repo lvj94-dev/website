@@ -137,12 +137,28 @@ export default function Home() {
 
             {/* Notes */}
             <li>NavLink-elements are for internal links (!)</li>
+            <li>
+              keep arrow-functions concise; maybe check later for continuity
+            </li>
             <li style={{ visibility: "hidden" }} />
 
             {/* DEBUGGING */}
             <li>WILD CARD</li>
             <li>WILD CARD</li>
             <li>WILD CARD</li>
+            <li>WILD CARD</li>
+            <li style={{ visibility: "hidden" }} />
+
+            {/* ROUTINE */}
+            <li>Routines</li>
+            <li style={{ visibility: "hidden" }} />
+            <ol>
+              <li>DON'T FORGET</li>
+              <ul>
+                <li>Error handling / error classes</li>
+                <li>const ... = ... // =&gt; export default ...</li>
+              </ul>
+            </ol>
           </ul>
         </div>
 
