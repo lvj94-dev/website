@@ -89,6 +89,10 @@ export default function Home() {
                 <li>...</li>
               </ul>
             </li>
+            <li>
+              (T) add certain "tags" in order to mark "TODO", "api-calls", ...
+              and list them on a central place
+            </li>
 
             {/* Protected Routes */}
             <li>(T) decide which routes to make "protected: true"</li>
