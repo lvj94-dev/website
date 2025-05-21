@@ -101,6 +101,7 @@ export default function Home() {
               (T) Create a page "Unauthorized" to handle attempt to access
               unauthorized pages
             </li>
+            <li>(T) Add front-end error handling</li>
 
             <li style={{ visibility: "hidden" }} />
 

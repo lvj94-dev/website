@@ -4,6 +4,8 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../../db/database.js";
 
+import { NotFoundError, UnauthorizedError } from "../errors/index.js";
+
 const getUserByUsername = (username) => {
   return new Promise((resolve, reject) => {
     const sql = `SELECT * FROM users WHERE username = ?`;
@@ -13,7 +15,7 @@ const getUserByUsername = (username) => {
         return reject(err);
       }
       if (!row) {
-        return reject(new Error("User not found!"));
+        return reject(new NotFoundError("User not found")); // 404
       }
 
       resolve(row);
@@ -27,7 +29,7 @@ export const authenticateUser = async (username, password) => {
   const validPassword = await bcrypt.compare(password, user.password);
 
   if (!validPassword) {
-    throw new Error("Invalid credentials!");
+    throw new UnauthorizedError("Invalid credentials"); // 401
   }
 
   return jwt.sign(

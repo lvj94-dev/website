@@ -10,4 +10,15 @@ const pool = new Pool({
   name: process.env.POSTGRESQL_NAME,
 });
 
+pool
+  .connect()
+  .then((client) => {
+    console.error("PostgreSQL connected");
+    client.release();
+  })
+  .catch((err) => {
+    console.error("PostgreSQL connection error:", err);
+    process.exit(1);
+  });
+
 export default pool;

@@ -2,6 +2,8 @@
 
 import nodemailer from "nodemailer";
 
+import { ServiceError } from "../errors/index.js";
+
 export const sendMailGmail = async ({
   senderName,
   to,
@@ -25,7 +27,11 @@ export const sendMailGmail = async ({
     replyTo: replyTo,
   };
 
-  await transporter.sendMail(mailOptions);
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (err) {
+    throw new ServiceError("Failed to send e-mail via Gmail", err); // 502
+  }
 };
 
 /**

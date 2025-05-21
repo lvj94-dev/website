@@ -1,5 +1,7 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+import { ServiceError } from "../../src/errors/index.js";
+
 // createUser()
 export function createUser(db, { username, password }) {
   return new Promise((resolve, reject) => {
@@ -7,7 +9,9 @@ export function createUser(db, { username, password }) {
 
     db.run(sql, [username, password], function (err) {
       if (err) {
-        reject(err);
+        return reject(
+          new ServiceError("Failed to create user", "sqlite", 502, err)
+        );
       } else {
         resolve({ id: this.lastID, username });
       }
@@ -20,7 +24,9 @@ export function getAllUsers(db) {
   return new Promise((resolve, reject) => {
     db.all(`SELECT id, username, created_at FROM users`, [], (err, rows) => {
       if (err) {
-        reject(err);
+        return reject(
+          new ServiceError("Failed to fetch users", "sqlite", 502, err)
+        );
       } else {
         resolve(rows);
       }

@@ -9,7 +9,7 @@ import NotFoundError from "./NotFoundError.js";
 import ServiceError from "./ServiceError.js";
 
 export {
-  HttpError, // Base Class
+  HttpError, // base class
   ValidationError, // 400 Bad Request (bad input)
   UnauthorizedError, // 401 Unauthorized (login/token fail)
   ForbiddenError, // 403 Forbidden (no permission)
