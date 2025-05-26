@@ -1,6 +1,7 @@
 /* Author: Lucas Vincent Johanningmeier */
 
 import Account from "@/pages/Account/Account";
+import { routesAccountSettings } from "./routesAccountSettings";
 
 export const routesAccount = [
   {
@@ -8,5 +9,6 @@ export const routesAccount = [
     label: "Account",
     protected: true,
     element: <Account />,
+    children: [...routesAccountSettings],
   },
 ];
