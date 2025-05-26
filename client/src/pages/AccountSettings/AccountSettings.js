@@ -5,9 +5,7 @@ import { Outlet } from "react-router-dom";
 export default function AccountSettings() {
   return (
     <>
-      <div className={StyleSheet.accountSettings}>
-        <Outlet />
-      </div>
+      <div className={StyleSheet.accountSettings}>Account Settings</div>
     </>
   );
 }

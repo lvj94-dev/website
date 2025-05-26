@@ -3,6 +3,8 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useCollectionAuth";
 
+import { Outlet } from "react-router-dom";
+
 import styles from "./Account.module.scss";
 
 export default function Account() {
@@ -21,6 +23,7 @@ export default function Account() {
       <div className={styles.account}>
         <button onClick={handleLogout}>Logout</button>
       </div>
+      <Outlet />
     </>
   );
 }
