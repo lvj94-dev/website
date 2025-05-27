@@ -7,11 +7,15 @@ import MapLinks from "@/components/ui/MapLinks/MapLinks";
 import { findRouteBySegment } from "@/utils/findRouteBySegment";
 
 import { routes } from "../../../routes/routes";
+import useSafeValue from "@/hooks/useSafeValue";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 export default function Breadcrumbs() {
-  console.log("Breadcrumbs()");
-
-  const { pathSegments } = useCollectionUrl();
+  const { pathSegments: rawSegments } = useCollectionUrl();
+  const pathSegments = useSafeValue(rawSegments, [], {
+    isRequired: true,
+    label: "pathSegments",
+  });
 
   // create a source-object with attributes "to" and "label"
   const mapSegmentPath = pathSegments.map((segment, index) => {
@@ -26,7 +30,9 @@ export default function Breadcrumbs() {
   return (
     <>
       <div className={styles.breadcrumbs}>
-        <MapLinks source={mapSegmentPath} />
+        <ErrorBoundary fallback={<p>Breadcrumbs unavailable</p>}>
+          <MapLinks source={mapSegmentPath} />
+        </ErrorBoundary>
       </div>
     </>
   );

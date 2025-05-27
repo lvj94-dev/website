@@ -10,15 +10,26 @@ export default function useSafeValue(value, fallback, options = {}) {
   } = options;
 
   return useMemo(() => {
-    if (value !== null && value !== undefined) {
+    const isPresent = value !== null && value !== undefined;
+
+    if (isPresent) {
       return value;
     }
 
+    const message = `Missing required ${label}`;
+
     if (!isRequired) {
-      const message = `Missing required ${label}`;
-      onError ? onError(message) : console.warn(message);
+      const error = new Error(message);
+      if (onError) {
+        onError(error);
+        throw error;
+      }
+    } else {
+      if (onError) {
+        onError(message);
+      }
     }
 
-    return fallback;
+    return typeof fallback === "function" ? fallback() : fallback;
   }, [value, fallback, isRequired, label, onError]);
 }

@@ -1,13 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+import useSafeValue from "@/hooks/useSafeValue";
 import styles from "./ButtonGoBack.module.scss";
 
 import useCollectionUrl from "@/hooks/useCollectionUrl";
 
 export default function ButtonGoBack() {
-  console.log("ButtonGoBack()");
+  const { handleGoBack: rawGoBack } = useCollectionUrl();
 
-  const { handleGoBack } = useCollectionUrl();
+  const handleGoBack = useSafeValue(rawGoBack, () => {}, {
+    isRequired: true,
+    label: "handleGoBack",
+  });
 
   return (
     <>
@@ -17,3 +21,8 @@ export default function ButtonGoBack() {
     </>
   );
 }
+
+/**
+ * NOTES
+ * // better handled at parent level ??
+ */

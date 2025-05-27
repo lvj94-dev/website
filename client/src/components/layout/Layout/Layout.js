@@ -6,30 +6,38 @@ import Navbar from "@/components/layout/Navbar/Navbar";
 import Pathbar from "@/components/layout/Pathbar/Pathbar";
 import Footer from "@/components/layout/Footer/Footer";
 
+import ErrorBoundary from "@/components/common/ErrorBoundary";
+
 import styles from "./Layout.module.scss";
 
 export default function Layout() {
-  console.log("Layout()");
-
   return (
     <>
       <div className={styles.layout}>
         <header className={styles.header}>
           <div className={styles["layout-navbar"]}>
-            <Navbar />
+            <ErrorBoundary fallback={<p>Navigation failed to load.</p>}>
+              <Navbar />
+            </ErrorBoundary>
           </div>
           <div className={styles["layout-pathbar"]}>
-            <Pathbar />
+            <ErrorBoundary fallback={<p>Pathbar failed to load.</p>}>
+              <Pathbar />
+            </ErrorBoundary>
           </div>
         </header>
 
         <main className={styles.main}>
-          <Outlet />
+          <ErrorBoundary fallback={<p>Main failed to load.</p>}>
+            <Outlet />
+          </ErrorBoundary>
         </main>
 
         <footer className={styles["layout-footer"]}>
           {/*<Footer />*/}
-          <Footer />
+          <ErrorBoundary fallback={<p>Footer failed to load.</p>}>
+            <Footer />
+          </ErrorBoundary>
         </footer>
       </div>
     </>

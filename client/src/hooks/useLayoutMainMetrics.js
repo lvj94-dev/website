@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function useLayoutMainMetrics() {
-  console.log("useLayoutMainMetrics()");
-
   const ref = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -13,11 +11,15 @@ export default function useLayoutMainMetrics() {
     if (!ref.current) return;
 
     const updateSize = () => {
-      const { offsetWidth, offsetHeight } = ref.current;
-      setDimensions({ width: offsetWidth, height: offsetHeight });
+      try {
+        const { offsetWidth, offsetHeight } = ref.current;
+        setDimensions({ width: offsetWidth, height: offsetHeight });
 
-      ref.current.style.setProperty("--element-width", `${offsetWidth}px`);
-      ref.current.style.setProperty("--element-height", `${offsetHeight}px`);
+        ref.current.style.setProperty("--element-width", `${offsetWidth}px`);
+        ref.current.style.setProperty("--element-height", `${offsetHeight}px`);
+      } catch (err) {
+        console.error("Layout metrics update failed:", err);
+      }
     };
 
     updateSize();
@@ -27,6 +29,8 @@ export default function useLayoutMainMetrics() {
       observer.observe(ref.current);
 
       return () => observer.disconnect();
+    } else {
+      console.warn("ResizeObserver is not supported in this environment.");
     }
   }, []);
 

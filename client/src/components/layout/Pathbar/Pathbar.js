@@ -5,14 +5,19 @@ import styles from "./Pathbar.module.css";
 import Breadcrumbs from "@/components/layout/Breadcrumbs/Breadcrumbs";
 import ButtonGoBack from "@/components/ui/ButtonGoBack/ButtonGoBack";
 
-export default function Pathbar() {
-  console.log("Pathbar()");
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 
+export default function Pathbar() {
   return (
     <>
       <div className={styles.pathbar}>
-        <ButtonGoBack />
-        <Breadcrumbs />
+        <ErrorBoundary fallback={<p>ButtonGoBack failed to load.</p>}>
+          <ButtonGoBack />
+        </ErrorBoundary>
+
+        <ErrorBoundary fallback={<p>Breadcrumbs failed to load.</p>}>
+          <Breadcrumbs />
+        </ErrorBoundary>
       </div>
     </>
   );

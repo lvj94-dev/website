@@ -4,13 +4,24 @@ import { useState } from "react";
 
 import useLayoutMainMetrics from "@/hooks/useLayoutMainMetrics";
 
+import useSafeValue from "@/hooks/useSafeValue";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
+
 import styles from "./LayoutMain.module.scss";
 
 export default function LayoutMain() {
-  console.log("LayoutMain()");
-
   const [selectedComponent, setSelectedComponent] = useState(null);
-  const { ref, height } = useLayoutMainMetrics();
+  const { ref: rawRef, height: rawHeight } = useLayoutMainMetrics();
+
+  const ref = useSafeValue(rawRef, null, {
+    isRequired: true,
+    label: "layoutMain.ref",
+  });
+
+  const height = useSafeValue(rawHeight, 0, {
+    isRequired: false,
+    label: "layoutMain.height",
+  });
 
   const components = {
     a: <div>A</div>,
@@ -30,7 +41,9 @@ export default function LayoutMain() {
         </section>
 
         <section ref={ref} className={styles.sectionTwo}>
-          {selectedComponent ?? <p>No component loaded.</p>}
+          <ErrorBoundary fallback={<p>Component failed to load.</p>}>
+            {selectedComponent ?? <p>No component loaded.</p>}
+          </ErrorBoundary>
         </section>
 
         <section className={styles.sectionThree}>Third section</section>

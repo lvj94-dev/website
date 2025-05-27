@@ -2,12 +2,15 @@
 
 import styles from "./ButtonSelectShowcase.module.scss";
 
-export default function ButtonSelectShowcase({ label, <Component /> }) {
-  console.log("ButtonSelectShowcase()");
-
+export default function ButtonSelectShowcase({ label, Component }) {
   return (
     <>
       <button type="button">{label}</button>
     </>
   );
 }
+
+/**
+ * NOTES
+ * - [TODO] Correct the component (!)
+ */

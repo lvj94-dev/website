@@ -5,12 +5,11 @@ import { NavLink } from "react-router-dom";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 import styles from "./Footer.module.scss";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 export default function Footer() {
-  console.log("Footer()");
-
   return (
-    <>
+    <ErrorBoundary fallback={<p>Footer unavailable</p>}>
       <div className={styles.footer}>
         <nav>
           {/* LinkedIn */}
@@ -35,6 +34,11 @@ export default function Footer() {
           <NavLink to="/contact">Contact</NavLink>
         </nav>
       </div>
-    </>
+    </ErrorBoundary>
   );
 }
+
+/**
+ * NOTES
+ * - NO try-catch-block here (!)
+ */

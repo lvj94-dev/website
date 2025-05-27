@@ -2,13 +2,18 @@
 
 import { Link } from "react-router-dom";
 
+import useSafeValue from "@/hooks/useSafeValue";
+
 export default function MapLinks({ source }) {
-  console.log("MapLinks()");
+  const safeSource = useSafeValue(source, [], {
+    isRequired: true,
+    label: "MapLinks source",
+  });
 
   return (
     <>
       <div>
-        {source.map(({ to, label }) => (
+        {safeSource.map(({ to, label }) => (
           <span key={to}>
             <Link to={to}>{label}</Link>
           </span>
