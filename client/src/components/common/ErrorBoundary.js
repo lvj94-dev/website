@@ -20,7 +20,7 @@ export default class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <>
-          <div>Something went wrong. Please reload the page.</div>;
+          <div>Something went wrong. Please reload the page.</div>
         </>
       );
     }

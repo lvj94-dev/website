@@ -18,16 +18,8 @@ export default function useSafeValue(value, fallback, options = {}) {
 
     const message = `Missing required ${label}`;
 
-    if (!isRequired) {
-      const error = new Error(message);
-      if (onError) {
-        onError(error);
-        throw error;
-      }
-    } else {
-      if (onError) {
-        onError(message);
-      }
+    if (onError) {
+      onError(message);
     }
 
     return typeof fallback === "function" ? fallback() : fallback;

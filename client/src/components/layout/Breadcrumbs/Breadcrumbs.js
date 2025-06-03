@@ -23,7 +23,7 @@ export default function Breadcrumbs() {
 
     return {
       to: "/" + pathSegments.slice(0, index + 1).join("/"),
-      label: route?.label,
+      label: route?.label ?? segment,
     };
   });
 
