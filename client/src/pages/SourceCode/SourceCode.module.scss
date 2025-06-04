@@ -1,12 +1,14 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+html,
+body {
+  overflow: hidden;
+}
+
 .sourceCode {
   display: flex;
-
-  .sourceCode-left,
-  .sourceCode-right {
-    flex: 1;
-  }
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* DEBUGGING */
@@ -17,4 +19,7 @@
   padding-left: 20px;
 
   border: 1px solid black;
+
+  flex: 1;
+  overflow-y: auto;
 }

@@ -12,7 +12,7 @@ export default function SourceCode() {
 
   return (
     <>
-      <div className="sourceCode">
+      <div className={styles.sourceCode}>
         <div className={styles["sourceCode-left"]}>
           <FileTree onFileSelect={setSelectedFile} />
         </div>
