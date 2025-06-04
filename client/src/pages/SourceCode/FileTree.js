@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import TreeNode from "./TreeNode";
 
+import sortFileTree from "@/utils/sortFileTree";
+
 import styles from "./SourceCode.module.scss";
 
 export default function FileTree({ onFileSelect }) {
@@ -13,7 +15,8 @@ export default function FileTree({ onFileSelect }) {
     fetch("/api/files/tree")
       .then((res) => res.json())
       .then((data) => {
-        setTree(data);
+        const sorted = sortFileTree(data);
+        setTree(sorted);
       })
       .catch(console.error);
   }, []);
