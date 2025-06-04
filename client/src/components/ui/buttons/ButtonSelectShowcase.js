@@ -13,4 +13,5 @@ export default function ButtonSelectShowcase({ label, Component }) {
 /**
  * NOTES
  * - [TODO] Correct the component (!)
+ * // better handled at parent level ??
  */

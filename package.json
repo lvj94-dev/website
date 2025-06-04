@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "ignore": "^7.0.5",
+    "react-syntax-highlighter": "^15.6.1"
   }
 }

@@ -10,6 +10,7 @@ const port = process.env.PORT || 5000;
 
 // routes/api
 const usersRoutes = (await import("./routes/api/users.js")).default;
+const filesRoutes = (await import("./routes/api/files.js")).default;
 
 // routes/services
 const contactRoutes = (await import("./routes/services/contactRoutes.js"))
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // api
 app.use("/api/users", usersRoutes);
+app.use("/api/files", filesRoutes);
 
 // services
 app.use("/api/contact", contactRoutes);

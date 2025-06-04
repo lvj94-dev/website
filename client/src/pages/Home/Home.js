@@ -93,6 +93,7 @@ export default function Home() {
               (T) add certain "tags" in order to mark "TODO", "api-calls", ...
               and list them on a central place
             </li>
+            <li>(T) Download the React DevTOols</li>
 
             {/* Protected Routes */}
             <li>(T) decide which routes to make "protected: true"</li>
