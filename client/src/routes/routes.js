@@ -37,7 +37,7 @@ export const routes = [
       // services
       ...routesSignup,
       ...routesContact,
-      ...routesSourcceCode,
+      //...routesSourcceCode,
       {
         path: "404",
         label: "Not Found",

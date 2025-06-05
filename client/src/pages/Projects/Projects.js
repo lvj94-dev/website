@@ -6,24 +6,36 @@ import MapLinks from "@/components/ui/MapLinks/MapLinks";
 
 import styles from "./Projects.module.css";
 
-import linksProjectsCssPlayground from "@/data/links-projects-css-playground.json";
+import linksProjectsCoding from "@/data/links-projects-coding.json";
+import linksProjectsGames from "@/data/links-projects-games.json";
 import linksProjectsMaths from "@/data/links-projects-maths.json";
 
 export default function Projects() {
-  console.log("Projects()");
+  const allProjectsLinks = [
+    ...linksProjectsCoding,
+    ...linksProjectsGames,
+    ...linksProjectsMaths,
+  ];
 
   return (
     <>
       <div className={styles.projects}>
         <h1>Projects</h1>
 
-        <nav>
+        {/*<nav>
           <Link to="css-playground">CSS-Playground</Link>
           <Link to="games">Games</Link>
           <Link to="maths">Maths</Link>
-        </nav>
+          <Link to="sourcecode">SourceCode</Link>
+        </nav>*/}
 
-        <Outlet />
+        <div className={styles.sectionOne}>
+          <MapLinks links={allProjectsLinks} />
+        </div>
+
+        <div className={styles.sectionTwo}>
+          <Outlet />
+        </div>
       </div>
     </>
   );

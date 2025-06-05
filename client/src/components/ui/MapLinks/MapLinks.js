@@ -12,13 +12,13 @@ export default function MapLinks({ source }) {
 
   return (
     <>
-      <div>
+      <nav>
         {safeSource.map(({ to, label }) => (
           <span key={to}>
             <Link to={to}>{label}</Link>
           </span>
         ))}
-      </div>
+      </nav>
     </>
   );
 }

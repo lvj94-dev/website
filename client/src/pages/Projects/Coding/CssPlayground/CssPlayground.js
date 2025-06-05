@@ -5,11 +5,10 @@ import { Outlet } from "react-router-dom";
 import styles from "./CssPlayground.module.css";
 
 export default function CssPlayground() {
-  console.log("CssPlayground()");
-
   return (
     <>
       <div className={styles.cssPlayground}>
+        CSS-Playground
         <Outlet />
       </div>
     </>
