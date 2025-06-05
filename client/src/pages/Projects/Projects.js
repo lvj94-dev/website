@@ -2,26 +2,28 @@
 
 import { Link, Outlet } from "react-router-dom";
 
+import { useState } from "react";
+
 import MapLinks from "@/components/ui/MapLinks/MapLinks";
+
+import { projectsLinks } from "@/data/links-projects";
 
 import styles from "./Projects.module.css";
 
-import linksProjectsCoding from "@/data/links-projects-coding.json";
-import linksProjectsGames from "@/data/links-projects-games.json";
-import linksProjectsMaths from "@/data/links-projects-maths.json";
+import LayoutMain from "@/components/layout/LayoutMain/LayoutMain";
 
 export default function Projects() {
-  const allProjectsLinks = [
-    ...linksProjectsCoding,
-    ...linksProjectsGames,
-    ...linksProjectsMaths,
-  ];
+  const allProjectsLinks = [...projectsLinks];
+
+  const [selectedKey, setSelectedKey] = useState(null);
+
+  const selectedComponent = allProjectsLinks.find(
+    (link) => link.key === selectedKey
+  )?.component;
 
   return (
     <>
       <div className={styles.projects}>
-        <h1>Projects</h1>
-
         {/*<nav>
           <Link to="css-playground">CSS-Playground</Link>
           <Link to="games">Games</Link>
@@ -29,13 +31,27 @@ export default function Projects() {
           <Link to="sourcecode">SourceCode</Link>
         </nav>*/}
 
-        <div className={styles.sectionOne}>
+        {/*<div className={styles.sectionOne}>
           <MapLinks links={allProjectsLinks} />
         </div>
 
         <div className={styles.sectionTwo}>
           <Outlet />
-        </div>
+        </div>*/}
+
+        <LayoutMain
+          components={{ [selectedKey]: selectedComponent }}
+          selectedKey={selectedKey}
+        >
+          {/*<MapLinks
+            links={allProjectsLinks.map(({ key, label }) => ({
+              to: key,
+              label,
+            }))}
+            onSelect={setSelectedKey}
+          />*/}
+          <MapLinks source={allProjectsLinks} onSelect={setSelectedKey} />
+        </LayoutMain>
       </div>
     </>
   );

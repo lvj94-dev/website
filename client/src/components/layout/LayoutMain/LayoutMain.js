@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import useLayoutMainMetrics from "@/hooks/useLayoutMainMetrics";
 
@@ -9,8 +9,15 @@ import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 import styles from "./LayoutMain.module.scss";
 
-export default function LayoutMain() {
+export default function LayoutMain({ components, selectedKey, children }) {
   const [selectedComponent, setSelectedComponent] = useState(null);
+
+  useEffect(() => {
+    if (selectedKey && components[selectedKey]) {
+      setSelectedComponent(components[selectedKey]);
+    }
+  }, [selectedKey, components]);
+
   const { ref: rawRef, height: rawHeight } = useLayoutMainMetrics();
 
   const ref = useSafeValue(rawRef, null, {
@@ -23,12 +30,13 @@ export default function LayoutMain() {
     label: "layoutMain.height",
   });
 
-  const components = {
+  /*const components = {
     a: <div>A</div>,
     b: <div>B</div>,
-  };
+  };*/
 
   const handleLoad = (key) => {
+    const component = components[key];
     setSelectedComponent(() => components[key]);
   };
 
@@ -36,8 +44,14 @@ export default function LayoutMain() {
     <>
       <div className={styles.layoutMain}>
         <section className={styles.sectionOne}>
-          <button onClick={() => handleLoad("a")}>Load A</button>
-          <button onClick={() => handleLoad("b")}>Load B</button>
+          {/*  <button onClick={() => handleLoad("a")}>Load A</button>
+          <button onClick={() => handleLoad("b")}>Load B</button>*/}
+          {/*{Object.keys(components).map((key) => (
+            <button key={key} onClick={() => handleLoad(key)}>
+              Load {key}
+            </button>
+          ))}*/}
+          {children}
         </section>
 
         <section ref={ref} className={styles.sectionTwo}>

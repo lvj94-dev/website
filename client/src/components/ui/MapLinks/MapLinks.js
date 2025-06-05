@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 import useSafeValue from "@/hooks/useSafeValue";
 
-export default function MapLinks({ source }) {
+import styles from "./MapLinks.module.scss";
+
+export default function MapLinks({ source, onSelect }) {
   const safeSource = useSafeValue(source, [], {
     isRequired: true,
     label: "MapLinks source",
@@ -12,10 +14,19 @@ export default function MapLinks({ source }) {
 
   return (
     <>
-      <nav>
-        {safeSource.map(({ to, label }) => (
+      <nav className={styles.buttonList}>
+        {safeSource.map(({ to, label, key }) => (
           <span key={to}>
-            <Link to={to}>{label}</Link>
+            {onSelect ? (
+              <button
+                className={styles.buttonProject}
+                onClick={() => onSelect(key || to)}
+              >
+                {label}
+              </button>
+            ) : (
+              <Link to={to}>{label}</Link>
+            )}
           </span>
         ))}
       </nav>
