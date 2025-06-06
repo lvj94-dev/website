@@ -1,1 +1,63 @@
 /* Author: Lucas Vincent Johanningmeier */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: #aaaaaa;
+  min-height: 100%;
+}
+
+.contactForm {
+  background: #1f1f1f;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.inputSenderName,
+.inputTo,
+.inputSubject,
+.textareaMessage {
+  background: #2a2a2a;
+  color: #ffffff;
+  border-radius: 1px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: #6a8dff;
+    box-shadow: 0 0 0 3px rgba(106, 141, 255, 0.2);
+    outline: none;
+  }
+}
+
+.textareaMessage {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.buttonSubmit {
+  background: linear-gradient(to right, #6a8dff, #8e44ff);
+  color: white;
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+
+  &:hover {
+    background: linear-gradient(to right, #5a7dff, #7e34ff);
+    transform: translate(-1px);
+  }
+
+  &:active {
+    transform: translate(1px);
+  }
+}

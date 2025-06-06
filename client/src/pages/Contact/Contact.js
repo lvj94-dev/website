@@ -25,33 +25,39 @@ export default function ContactForm() {
 
   return (
     <>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className={styles.contact}>
+        <form className={styles.contactForm} onSubmit={handleSubmit}>
           <input
+            className={styles.inputSenderName}
             name="senderName"
             placeholder="Your name"
             onChange={handleChange}
             required
           />
           <input
+            className={styles.inputTo}
             name="to"
             placeholder="Your e-mail address"
             onChange={handleChange}
             required
           />
           <input
+            className={styles.inputSubject}
             name="subject"
             placeholder="Your subject"
             onChange={handleChange}
             required
           />
           <textarea
+            className={styles.textareaMessage}
             name="message"
             placeholder="Your message"
             onChange={handleChange}
             required
           />
-          <button type="submit">Send e-mail</button>
+          <button className={styles.buttonSubmit} type="submit">
+            Send e-mail
+          </button>
         </form>
       </div>
     </>
