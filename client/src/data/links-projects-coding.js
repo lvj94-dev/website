@@ -4,6 +4,7 @@
 import SourceCode from "@/pages/Projects/Coding/SourceCode/SourceCode";
 import CssPlaygroundBoxModel from "@/pages/Projects/Coding/CssPlayground/BoxModel/BoxModel";
 import CssPlaygroundTextAndFont from "@/pages/Projects/Coding/CssPlayground/TextAndFont/TextAndFont";
+import DevDashboard from "@/pages/Projects/Coding/DevDashboard/DevDashboard";
 
 export const projectsLinksCoding = [
   {
@@ -23,5 +24,11 @@ export const projectsLinksCoding = [
     label: "Coding: CSS-Playground - Text & Font",
     component: CssPlaygroundTextAndFont,
     path: "coding/css-playground/text-andfont",
+  },
+  {
+    key: "coding-dev-dashboard",
+    label: "Coding: DevDashboard",
+    component: DevDashboard,
+    path: "coding/dev-dashboard",
   },
 ];

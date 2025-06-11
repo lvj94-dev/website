@@ -16,7 +16,7 @@ function flattenFiles(tree) {
   const files = [];
 
   for (const node of tree) {
-    if (node.type === "file" && /\.(js|jsx|zs|tsx)$/.test(node.name)) {
+    if (node.type === "file" && /\.(js|jsx|ts|tsx)$/.test(node.name)) {
       files.push(path.join(projectRoot, node.path));
     } else if (node.type === "directory") {
       files.push(...flattenFiles(node.children));
