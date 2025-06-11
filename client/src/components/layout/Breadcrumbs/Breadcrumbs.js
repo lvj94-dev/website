@@ -31,7 +31,11 @@ export default function Breadcrumbs() {
     <>
       <div className={styles.breadcrumbs}>
         <ErrorBoundary fallback={<p>Breadcrumbs unavailable</p>}>
-          <MapLinks source={mapSegmentPath} />
+          <MapLinks
+            className={styles.breadcrumbsMapLinks}
+            source={mapSegmentPath}
+            disableNavigation
+          />
         </ErrorBoundary>
       </div>
     </>

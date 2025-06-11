@@ -1,11 +1,16 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import Projects from "../pages/Projects/Projects";
+import React from "react";
 
-import CssPlayground from "@/pages/Projects/Coding/CssPlayground/CssPlayground";
-import Games from "@/pages/Projects/Games/Games";
-import Maths from "@/pages/Projects/Maths/Maths";
-import SourceCode from "@/pages/Projects/Coding/SourceCode/SourceCode";
+import Projects from "../pages/Projects/Projects";
+import { projectsLinks } from "@/data/links-projects";
+
+const projectChildren = projectsLinks.map(({ path, component, label }) => ({
+  path,
+  label,
+  protected: false,
+  element: React.createElement(component),
+}));
 
 export const routesProjects = [
   {
@@ -13,25 +18,6 @@ export const routesProjects = [
     label: "Projects",
     protected: false,
     element: <Projects />,
-    children: [
-      // CSS-Playground
-      {
-        path: "css-playground",
-        label: "CSS-Playground",
-        protected: false,
-        element: <CssPlayground />,
-      },
-      // GAMES
-      { path: "games", label: "Games", protected: false, element: <Games /> },
-      // Maths
-      { path: "maths", label: "Maths", protected: false, element: <Maths /> },
-      // SourceCode
-      {
-        path: "sourcecode",
-        label: "SourceCode",
-        protected: false,
-        element: <SourceCode />,
-      },
-    ],
+    children: projectChildren,
   },
 ];
