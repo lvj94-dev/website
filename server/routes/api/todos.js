@@ -11,3 +11,5 @@ router.get("/api/todos", (req, res) => {
   const todos = collectTodos();
   res.json(todos);
 });
+
+export default router;

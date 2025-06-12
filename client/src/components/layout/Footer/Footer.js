@@ -1,12 +1,24 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { NavLink } from "react-router-dom";
 
+// Assets
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import styles from "./Footer.module.scss";
+// Error handling
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
+// Styling
+import styles from "./Footer.module.scss";
+
+/**
+ * @component
+ * @function Footer
+ *
+ * @description
+ * Displays the site footer with external social links and a contact route.
+ */
 export default function Footer() {
   return (
     <ErrorBoundary fallback={<p>Footer unavailable</p>}>
@@ -37,8 +49,3 @@ export default function Footer() {
     </ErrorBoundary>
   );
 }
-
-/**
- * NOTES
- * - NO try-catch-block here (!)
- */

@@ -1,15 +1,29 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Hooks
+import useCollectionUrl from "@/hooks/useCollectionUrl";
+
+// UI Components
+import MapLinks from "@/components/ui/MapLinks/MapLinks";
+
+// Utilities
+import { findRouteBySegment } from "@/utils/findRouteBySegment";
+import { routes } from "../../../routes/routes";
+
+// Error handling
+import ErrorBoundary from "@/components/common/ErrorBoundary";
+import useSafeValue from "@/hooks/useSafeValue";
+
+// Styling
 import styles from "./Breadcrumbs.module.scss";
 
-import useCollectionUrl from "@/hooks/useCollectionUrl";
-import MapLinks from "@/components/ui/MapLinks/MapLinks";
-import { findRouteBySegment } from "@/utils/findRouteBySegment";
-
-import { routes } from "../../../routes/routes";
-import useSafeValue from "@/hooks/useSafeValue";
-import ErrorBoundary from "@/components/common/ErrorBoundary";
-
+/**
+ * @component
+ * @function Breadcrumbs
+ *
+ * @description
+ * Builds breadcrumb navigation from the current URL path.
+ */
 export default function Breadcrumbs() {
   const { pathSegments: rawSegments } = useCollectionUrl();
   const pathSegments = useSafeValue(rawSegments, [], {
@@ -34,7 +48,7 @@ export default function Breadcrumbs() {
           <MapLinks
             className={styles.breadcrumbsMapLinks}
             source={mapSegmentPath}
-            disableNavigation
+            //disableNavigation
           />
         </ErrorBoundary>
       </div>

@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <>
       <div className={styles.projects}>
-        <LayoutMain selectedKey={selectedKey}>
+        <section selectedKey={selectedKey}>
           <MapLinks
             className={styles.mapLinksProjects}
             buttonClassName={styles.buttonProjects}
@@ -48,7 +48,7 @@ export default function Projects() {
             onSelect={setSelectedKey}
           />
           <Outlet />
-        </LayoutMain>
+        </section>
       </div>
     </>
   );

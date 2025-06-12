@@ -165,7 +165,7 @@ export default function Home() {
         </div>
 
         <div className={styles["home-right"]}>
-          <LayoutMain />
+          {/*<LayoutMain />*/}
 
           {/*<p>TODO: ButtonSelectShowcase, LayoutMain</p>*/}
         </div>
