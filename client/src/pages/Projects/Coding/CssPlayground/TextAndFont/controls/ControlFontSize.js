@@ -1,10 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../TextAndFont.module.css";
 
+/**
+ * @component
+ * @function ControlFontSize
+ *
+ * @description
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlFontSize({ value, onChange }) {
-  console.log("ControlFontSize()");
-
   return (
     <>
       <div className={styles.controlFontSize}>

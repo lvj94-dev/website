@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "./Blog.module.scss";
 
+/**
+ * @component
+ * @function Blog
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Blog() {
-  console.log("Blog()");
-
   return (
     <>
       <div className={styles.blog}>

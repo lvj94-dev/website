@@ -1,14 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useState } from "react";
 
-import styles from "./TextAndFont.module.css";
-
+// Components
 import ControlFontSize from "./controls/ControlFontSize";
 import ControlFontWeight from "./controls/ControlFontWeight";
 import ControlFontFamily from "./controls/ControlFontFamily";
 import ControlTextAlign from "./controls/ControlTextAlign";
 import ControlColor from "./controls/ControlColor";
+
+// Styling
+import styles from "./TextAndFont.module.css";
 
 const defaultStyle = {
   fontSize: "20px",
@@ -18,13 +21,18 @@ const defaultStyle = {
   color: "#000000",
 };
 
+/**
+ * @component
+ * @function TextAndFont
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function TextAndFont() {
-  console.log("TextAndFont()");
-
-  // state hooks
   const [styleState, setStyleState] = useState(defaultStyle);
 
-  // handlers
   const handleChange = (property, value, unit = "") => {
     setStyleState((prev) => ({
       ...prev,

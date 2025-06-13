@@ -1,6 +1,14 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Node
 const path = require("path");
+
+/**
+ * @file craco.config.js
+ *
+ * @description
+ * Adds alias support '@' for custom Webpack setup.
+ */
 
 module.exports = {
   webpack: {

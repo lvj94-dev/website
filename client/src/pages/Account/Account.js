@@ -1,12 +1,23 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import { useNavigate } from "react-router-dom";
+// React
+import { Outlet, useNavigate } from "react-router-dom";
+
+// Hooks
 import { useAuth } from "@/hooks/useCollectionAuth";
 
-import { Outlet } from "react-router-dom";
-
+// Styling
 import styles from "./Account.module.scss";
 
+/**
+ * @component
+ * @function Account
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Account() {
   console.log(`Account()`);
 

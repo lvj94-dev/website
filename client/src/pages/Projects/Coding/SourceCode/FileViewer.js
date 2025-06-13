@@ -1,9 +1,21 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useEffect, useState } from "react";
+
+// Third-party
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+/**
+ * @component
+ * @function FileViewer
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function FileViewer({ filePath }) {
   const [content, setContent] = useState("");
 
@@ -52,3 +64,5 @@ export default function FileViewer({ filePath }) {
     </>
   );
 }
+
+// [TODO]

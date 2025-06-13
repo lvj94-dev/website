@@ -1,8 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-//import LayoutMain from "../../../../_DEL/LayoutMain/LayoutMain";
+// Styling
 import styles from "./Components.module.css";
 
+/**
+ * @component
+ * @function Components
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Components() {
   return (
     <>

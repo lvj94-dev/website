@@ -1,13 +1,23 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useEffect, useState } from "react";
 
+// Components
 import TreeNode from "./TreeNode";
 
+// Utilities
 import sortFileTree from "@/utils/sortFileTree";
 
-import styles from "./SourceCode.module.scss";
-
+/**
+ * @component
+ * @function FileTree
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function FileTree({ onFileSelect }) {
   const [tree, setTree] = useState([]);
 
@@ -47,3 +57,5 @@ export default function FileTree({ onFileSelect }) {
     </>
   );
 }
+
+// [TODO]

@@ -7,6 +7,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useSafeValue from "./useSafeValue";
 
 /**
+ * @typedef {Object} CollectionUrlData
+ * @property {ReturnType<typeof useLocation} location - The current location bject from React Router.
+ * @property {string[]} pathSegments - Array of path segments parsed from the URL.
+ * @property {string} currentPage - The last segment of the current URL.
+ * @property {ReturnType<typeof useNavigate} navigate - Navigation function from React Router.
+ * @property {Function} handleGoBack - Funtion to navigate one step back in the browser history.
+ */
+
+/**
  * @function useCollectionUrl
  *
  * @description

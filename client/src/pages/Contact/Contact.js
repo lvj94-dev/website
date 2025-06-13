@@ -1,10 +1,23 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useState } from "react";
+
+// Third-party
 import axios from "axios";
 
+// Styling
 import styles from "./contact.module.scss";
 
+/**
+ * @component
+ * @function ContactForm
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,6 +30,15 @@ export default function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  /**
+   * @function handleSubmit
+   *
+   * @description
+   * Submits the form data to the contact endpoint.
+   *
+   * @param {React.FormEvent<HTMLFormElement} e - Form submission event.
+   * @returns {Promise<void}
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post("/api/contact/gmail", formData);

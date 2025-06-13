@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../TextAndFont.module.css";
 
+/**
+ * @component
+ * @function ControlFontWeight
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlFontWeight({ value, onChange }) {
-  console.log("ControlFontWeight()");
-
   return (
     <>
       <div className={styles.controlFontWeight}>

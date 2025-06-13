@@ -1,17 +1,28 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Third-party
 import axios from "axios";
 
+// Context
 import { AuthContext } from "@/context/AuthContext";
 
+// Styling
 import styles from "./Signup.module.scss";
 
-export default function SignUp() {
-  console.log(`SignUp()`);
-
+/**
+ * @component
+ * @function Signup
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
+export default function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -76,3 +87,5 @@ export default function SignUp() {
     </>
   );
 }
+
+// [TODO]

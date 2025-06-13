@@ -1,16 +1,28 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import React, { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
+
+// Third-party
 import axios from "axios";
 
+// Context
 import { AuthContext } from "../../context/AuthContext";
 
+// Styling
 import styles from "./Login.module.css";
 
+/**
+ * @component
+ * @function Login
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Login() {
-  console.log("Login()");
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -64,3 +76,5 @@ export default function Login() {
     </>
   );
 }
+
+// [TODO]

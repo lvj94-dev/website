@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../BoxModel.module.css";
 
+/**
+ * @component
+ * @function ControlPadding
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlPadding({ value, onChange }) {
-  console.log("ControlPadding()");
-
   return (
     <>
       <div className={styles.controlPadding}>

@@ -1,9 +1,20 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useState, useEffect } from "react";
 
+// Styling
 import styles from "./DevDashboard.module.scss";
 
+/**
+ * @component
+ * @function DevDashboard
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function DevDashboard() {
   const [todos, setTodos] = useState([]);
 

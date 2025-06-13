@@ -15,7 +15,7 @@ import { AppError } from "@/errors/index";
  * @description
  * Custom hook to access the authentication context.
  *
- * @returns {{ token: string|null, setToken: Function, logout: Function}}
+ * @returns {import("@/context/AuthContext").AuthContextValue}
  */
 export function useAuth() {
   const context = useContext(AuthContext);

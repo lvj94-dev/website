@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../BoxModel.module.css";
 
+/**
+ * @component
+ * @function ControlMargin
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlMargin({ value, onChange }) {
-  console.log("ControlMargin()");
-
   return (
     <>
       <div className={styles.controlMargin}>

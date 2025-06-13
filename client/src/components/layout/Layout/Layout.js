@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 // Hooks
 import useLayoutMetrics from "@/hooks/useLayoutMetrics";
 
-// UI Components
+// Components
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Pathbar from "@/components/layout/Pathbar/Pathbar";
 import Footer from "@/components/layout/Footer/Footer";

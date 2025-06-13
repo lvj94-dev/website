@@ -13,6 +13,15 @@ import { linksProjectsCoding } from "@/data/links-projects-coding";
 // Styling
 import styles from "./Projects.module.scss";
 
+/**
+ * @component
+ * @function Projects
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Projects() {
   const location = useLocation();
 
@@ -49,3 +58,5 @@ export default function Projects() {
     </>
   );
 }
+
+// [TODO]

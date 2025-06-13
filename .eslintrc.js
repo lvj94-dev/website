@@ -1,10 +1,10 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-module.exports = {
+/*module.exports = {
   plugins: ["jsdoc"],
   rules: {
     require: {
       ClassDeclaration: true,
     },
   },
-};
+};*/

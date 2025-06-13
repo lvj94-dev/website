@@ -1,15 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useState } from "react";
 
-// TODO: chose 1. the same styling or 2. a separate one for each subpage
-import styles from "./BoxModel.module.css";
-
+// Components
 import ControlWidth from "./controls/ControlWidth";
 import ControlHeight from "./controls/ControlHeight";
 import ControlPadding from "./controls/ControlPadding";
 import ControlMargin from "./controls/ControlMargin";
 import ControlBorderWidth from "./controls/ControlBorderWidth";
+
+// Styling
+import styles from "./BoxModel.module.css";
 
 const defaultStyle = {
   width: "50px",
@@ -20,9 +22,16 @@ const defaultStyle = {
   boxSizing: "border-box",
 };
 
+/**
+ * @component
+ * @function BoxModel
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function BoxModel() {
-  console.log("BoxModel()");
-
   const [styleState, setStyleState] = useState(defaultStyle);
 
   const handleChange = (property, value, unit = "") => {
@@ -76,3 +85,5 @@ export default function BoxModel() {
     </>
   );
 }
+
+// [TODO]

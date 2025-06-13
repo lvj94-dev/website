@@ -1,7 +1,17 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useState } from "react";
 
+/**
+ * @component
+ * @function TreeNode
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function TreeNode({ node, prefix, isLast, onFileSelect }) {
   const [isOpen, setIsOpen] = useState(true);
 

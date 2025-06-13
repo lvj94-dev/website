@@ -6,6 +6,12 @@ import { createContext, useState, useEffect } from "react";
 // Error handling
 import useSafeValue from "@/hooks/useSafeValue";
 
+/**
+ * @typedef {Object} AuthContextValue
+ * @property {string|null} token - Stored authentication token from localStorage.
+ * @property {(token: string|null) => void} setToken - State setter for updating the auth token.
+ * @property {() => void} logout - Clears the auth token from state and localStorage
+ */
 export const AuthContext = createContext();
 
 /**
@@ -18,11 +24,7 @@ export const AuthContext = createContext();
  * @param {object} props
  * @param {React.ReactNode} props.children - Components that consume the auth context.
  *
- * @property {string|null} token - Stored authentication token from localStorage.
- * @property {(token: string|null) => void} setToken - State setter for updating the auth token.
- * @property {() => void} logout - Clears
- *
- * @returns {JSX.Element} AuthContext
+ * @returns {JSX.Element}
  */
 export default function AuthProvider({ children }) {
   const [token, setToken] = useState(() => {

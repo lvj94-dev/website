@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "./Home.module.css";
 
+/**
+ * @component
+ * @function Home
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Home() {
-  console.log("Home()");
-
   return (
     <>
       <div className={styles.home}>
@@ -160,6 +168,46 @@ export default function Home() {
                 <li>const ... = ... // =&gt; export default ...</li>
               </ul>
             </ol>
+            <li style={{ visibility: "hidden" }} />
+
+            <li>
+              JSDocs
+              <li>ADD @throws</li>
+              <li>
+                "What to do if locally declared variable is also being
+                returned?"
+              </li>
+              <li>
+                RULES
+                <li>
+                  Pages
+                  <li>add extra JSDocs for each function</li>
+                  <li>
+                    exception: not for functions "handleChange" with [data,
+                    setData]
+                  </li>
+                </li>
+                <li>
+                  @property =&gt; not for internal variable declarations (!)
+                </li>
+                <li>ALSO not for not exposed ones (!)</li>
+              </li>
+            </li>
+            <li>
+              (T) Add considered steps during the whole programming process and
+              their evaluation
+            </li>
+            <li>(T) Remove internal variable declarations (!)</li>
+            <li>(T) Refactor 'FileTree' & 'FileViewer' & 'TreeNode</li>
+            <li>(T) Add additional space between *|*</li>
+            <li>
+              (T) Write a central type definition file (!)
+              <li>e.g. @/types/routes.d.ts</li>
+              <li>
+                ??? better this or in the file where it belongs for then a
+                change won't be missed so easily ???
+              </li>
+            </li>
           </ul>
         </div>
 

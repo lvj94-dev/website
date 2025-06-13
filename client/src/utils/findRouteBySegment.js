@@ -1,5 +1,16 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+/**
+ * @function findRouteBySegment
+ *
+ * @description
+ * Searches for a route object whose path segment matches the given string.
+ *
+ * @param {string} segment - The URL segment to search for.
+ * @param {import("@/routes/routes").RouteEntry} routes - An array of route objects to search through.
+ *
+ * @returns {import("@/routes/routes").RouteEntry | null} The matching route object or null if not found.
+ */
 export const findRouteBySegment = (segment, routes) => {
   for (const route of routes) {
     // strip leading '/'-character

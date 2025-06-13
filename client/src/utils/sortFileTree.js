@@ -1,5 +1,24 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+/**
+ * @typedef FileTreeNode
+ * @property {string} name
+ * @property {string} path
+ * @property {'file' | 'directory'} type
+ * @property {FileTreeNode[]} [children]
+ */
+
+/**
+ * @function sortFileTree
+ *
+ * @description
+ * Recursively sorts a file tree array. Directories are listed before files,
+ * and names are sorted alphabetically within each type.
+ *
+ * @param {FileTreeNode[]} nodes - Array of file/directory nodes to sort.
+ *
+ * @returns {FileTreeNode[]} Sorted file tree.
+ */
 export default function sortFileTree(nodes) {
   if (!Array.isArray(nodes)) {
     return [];
@@ -19,3 +38,5 @@ export default function sortFileTree(nodes) {
         : node
     );
 }
+
+// [TODO]

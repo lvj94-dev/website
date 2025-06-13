@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../TextAndFont.module.css";
 
+/**
+ * @component
+ * @function ControlTextAlign
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlTextAlign({ value, onChange }) {
-  console.log("ControlTextAlign()");
-
   return (
     <>
       <div className={styles.controlTextAlign}>

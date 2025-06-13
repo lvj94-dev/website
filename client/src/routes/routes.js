@@ -1,24 +1,44 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { Navigate } from "react-router-dom";
 
+// Components
 import Layout from "../components/layout/Layout/Layout";
 
-// navbar
+// Routes "navbar"
 import { routesHome } from "./routesHome";
 import { routesProjects } from "./routesProjects";
 import { routesComponents } from "./routesComponents";
 import { routesBlog } from "./routesBlog";
-import { routesAccount } from "./routesAccount";
 import { routesLogin } from "./routesLogin";
-// api
+import { routesAccount } from "./routesAccount";
+
+// Routes "api" / "services"
 import { routesSignup } from "./routesSignup";
-// services
 import { routesContact } from "./routesContact";
 
+// Routes (else)
 import NotFound from "@/pages/NotFound/NotFound";
-import { routesSourceCode } from "./routesSourceCode";
 
+/**
+ * @typedef {Object} RouteEntry
+ * @property {string} path - URL path of the route.
+ * @property {string} label - Name for the route.
+ * @property {boolean} protected - Whether the route requires authentication.
+ * @property {JSX.Element} element - The component to render for this route.
+ * @property {RouteEntry[]} [children] - Optional nested routes.
+ */
+
+/**
+ * @constant
+ * @name routes
+ *
+ * @description
+ * Master route configuration. (Frontend)
+ *
+ * @type {RouteEntry[]}
+ */
 export const routes = [
   {
     path: "/",
@@ -33,8 +53,7 @@ export const routes = [
       ...routesBlog,
       ...routesLogin,
       ...routesAccount,
-      // api
-      // services
+      // api, services
       ...routesSignup,
       ...routesContact,
       {

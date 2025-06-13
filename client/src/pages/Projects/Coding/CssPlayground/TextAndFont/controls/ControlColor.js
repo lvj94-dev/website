@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../TextAndFont.module.css";
 
+/**
+ * @component
+ * @function ControlColor
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlColor({ value, onChange }) {
-  console.log("ControlColor()");
-
   return (
     <>
       <div className={styles.controlColor}>

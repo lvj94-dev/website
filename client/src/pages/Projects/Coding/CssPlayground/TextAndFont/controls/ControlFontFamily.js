@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../TextAndFont.module.css";
 
+/**
+ * @component
+ * @function ControlFontFamily
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlFontFamily({ value, onChange }) {
-  console.log("ControlFontFamily()");
-
   return (
     <>
       <div className={styles.controlFontFamily}>

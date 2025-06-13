@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../BoxModel.module.css";
 
+/**
+ * @component
+ * @function ControlWidth
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlWidth({ value, onChange }) {
-  console.log("ControlWidth()");
-
   return (
     <>
       <div className={styles.controlWidth}>

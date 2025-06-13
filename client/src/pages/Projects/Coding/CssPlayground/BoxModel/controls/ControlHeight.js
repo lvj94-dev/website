@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "../BoxModel.module.css";
 
+/**
+ * @component
+ * @function ControlHeight
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function ControlHeight({ value, onChange }) {
-  console.log("ControlHeight()");
-
   return (
     <>
       <div className={styles.controlHeight}>

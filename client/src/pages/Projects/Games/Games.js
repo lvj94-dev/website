@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Styling
 import styles from "./Games.module.css";
 
+/**
+ * @component
+ * @function Games
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function Games() {
-  console.log("Games()");
-
   return (
     <>
       <div className={styles.games}>

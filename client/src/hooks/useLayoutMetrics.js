@@ -4,16 +4,19 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
+ * @typedef LayoutMetrics
+ * @property {React.RefObject<HTMLElement>} ref - Ref to the DOM element whose size is tracked.
+ * @property {number} width - Current width of the referenced element.
+ * @property {number} height - Current height of the referenced element.
+ */
+
+/**
  * @function useLayoutMetrics
  *
  * @description
  * Custom hook that tracks the width and height of the main area using 'ref' and 'ResizeObserver'.
  *
- * @returns {{
- *   ref: React.RefObject<HTMLElement>,
- *   width: number,
- *   height: number
- * }}
+ * @returns {LayoutMetrics}
  */
 export default function useLayoutMetrics() {
   const ref = useRef(null);

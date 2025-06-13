@@ -1,6 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-// UI Components
+// Components
 import Breadcrumbs from "@/components/layout/Breadcrumbs/Breadcrumbs";
 import ButtonGoBack from "@/components/ui/ButtonGoBack/ButtonGoBack";
 

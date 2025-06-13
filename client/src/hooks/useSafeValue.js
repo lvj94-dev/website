@@ -1,7 +1,23 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useMemo } from "react";
 
+/**
+ * @typedef {Object} SafeValueGuard
+ * @property {boolean} [isRequired=false]
+ * @property {string} {label="value"}
+ * @property {{msg: string} => void} [onError=console.warn]
+ */
+
+/**
+ * @function useSafeValue
+ *
+ * @description
+ * Custom hook that ensures a value is not null or undefined.
+ *
+ * @returns {*} Either the original value or the fallback.
+ */
 export default function useSafeValue(value, fallback, options = {}) {
   const {
     isRequired = false,

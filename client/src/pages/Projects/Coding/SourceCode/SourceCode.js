@@ -1,12 +1,24 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useState } from "react";
 
+// Components
 import FileTree from "./FileTree";
 import FileViewer from "./FileViewer";
 
+// Styling
 import styles from "./SourceCode.module.scss";
 
+/**
+ * @component
+ * @function SourceCode
+ *
+ * @description
+ * [TODO]
+ *
+ * @returns {JSX.Element}
+ */
 export default function SourceCode() {
   const [selectedFile, setSelectedFile] = useState(null);
 
