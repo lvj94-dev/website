@@ -6,9 +6,13 @@ import { Component } from "react";
 /**
  * @component
  * @class ErrorBoundary
+ * @extends React.Component
  *
  * @description
  * Catches errors in child components and renders fallback UI.
+ *
+ * @property {boolean} state.hasError
+ * @property {React.ReactNode} props.children
  */
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -27,9 +31,6 @@ export default class ErrorBoundary extends Component {
     console.error("Layout-level error:", error, errorInfo);
   }
 
-  /**
-   * Renders fallback UI if an error occured, otherwise renders children.
-   */
   render() {
     if (this.state.hasError) {
       return (

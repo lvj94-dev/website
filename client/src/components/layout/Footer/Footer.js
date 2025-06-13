@@ -18,6 +18,8 @@ import styles from "./Footer.module.scss";
  *
  * @description
  * Displays the site footer with external social links and a contact route.
+ *
+ * @returns {JSX.Element}
  */
 export default function Footer() {
   return (

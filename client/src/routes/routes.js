@@ -17,7 +17,7 @@ import { routesSignup } from "./routesSignup";
 import { routesContact } from "./routesContact";
 
 import NotFound from "@/pages/NotFound/NotFound";
-import { routesSourcceCode } from "./routesSourceCode";
+import { routesSourceCode } from "./routesSourceCode";
 
 export const routes = [
   {
@@ -37,7 +37,6 @@ export const routes = [
       // services
       ...routesSignup,
       ...routesContact,
-      //...routesSourcceCode,
       {
         path: "404",
         label: "Not Found",

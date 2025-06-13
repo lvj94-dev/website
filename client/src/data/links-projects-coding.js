@@ -6,7 +6,7 @@ import CssPlaygroundBoxModel from "@/pages/Projects/Coding/CssPlayground/BoxMode
 import CssPlaygroundTextAndFont from "@/pages/Projects/Coding/CssPlayground/TextAndFont/TextAndFont";
 import DevDashboard from "@/pages/Projects/Coding/DevDashboard/DevDashboard";
 
-export const projectsLinksCoding = [
+export const linksProjectsCoding = [
   {
     key: "coding-sourcecode",
     label: "Coding: SourceCode",

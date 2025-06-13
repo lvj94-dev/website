@@ -1,6 +1,5 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import LayoutMain from "@/components/layout/LayoutMain/LayoutMain";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -164,11 +163,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className={styles["home-right"]}>
-          {/*<LayoutMain />*/}
-
-          {/*<p>TODO: ButtonSelectShowcase, LayoutMain</p>*/}
-        </div>
+        <div className={styles["home-right"]}>Right side</div>
       </div>
     </>
   );

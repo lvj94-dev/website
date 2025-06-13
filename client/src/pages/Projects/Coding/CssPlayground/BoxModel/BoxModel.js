@@ -11,8 +11,6 @@ import ControlPadding from "./controls/ControlPadding";
 import ControlMargin from "./controls/ControlMargin";
 import ControlBorderWidth from "./controls/ControlBorderWidth";
 
-import VerticalLine from "@/components/ui/VerticalLine/VerticalLine";
-
 const defaultStyle = {
   width: "50px",
   height: "50px",
@@ -64,8 +62,6 @@ export default function BoxModel() {
               onChange={handleChange}
             />
           </div>
-
-          <VerticalLine />
 
           {/* Preview */}
           <div className={styles["boxModel-preview"]}>

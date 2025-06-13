@@ -3,9 +3,11 @@
 import React from "react";
 
 import Projects from "../pages/Projects/Projects";
-import { projectsLinks } from "@/data/links-projects";
+import { linksProjectsCoding } from "@/data/links-projects-coding";
 
-const projectChildren = projectsLinks.map(({ path, component, label }) => ({
+const allProjectsLinks = [...linksProjectsCoding];
+
+const projectChildren = allProjectsLinks.map(({ path, component, label }) => ({
   path,
   label,
   protected: false,

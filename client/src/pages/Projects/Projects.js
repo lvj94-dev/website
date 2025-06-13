@@ -1,25 +1,25 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
+import { useState, useEffect } from "react";
 import { Outlet, useLocation, matchPath } from "react-router-dom";
 
-import { useState, useEffect } from "react";
-
+// UI Components
 import MapLinks from "@/components/ui/MapLinks/MapLinks";
 
-import { projectsLinks } from "@/data/links-projects";
+// Data
+import { linksProjectsCoding } from "@/data/links-projects-coding";
 
+// Styling
 import styles from "./Projects.module.scss";
 
-import LayoutMain from "@/components/layout/LayoutMain/LayoutMain";
-
 export default function Projects() {
-  const allProjectsLinks = [...projectsLinks];
   const location = useLocation();
 
   const [selectedKey, setSelectedKey] = useState(null);
 
   useEffect(() => {
-    const active = projectsLinks.find(({ path }) => {
+    const active = linksProjectsCoding.find(({ path }) => {
       return matchPath(
         { path: `/projects/${path}/*`, end: false },
         location.pathname
@@ -28,11 +28,7 @@ export default function Projects() {
     setSelectedKey(active?.key || null);
   }, [location]);
 
-  const components = Object.fromEntries(
-    projectsLinks.map(({ key, component }) => [key, component])
-  );
-
-  const navLinks = projectsLinks.map(({ path, label }) => ({
+  const navLinks = linksProjectsCoding.map(({ path, label }) => ({
     to: `/projects/${path}`,
     label,
   }));

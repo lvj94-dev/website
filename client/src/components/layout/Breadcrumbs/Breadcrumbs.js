@@ -23,9 +23,14 @@ import styles from "./Breadcrumbs.module.scss";
  *
  * @description
  * Builds breadcrumb navigation from the current URL path.
+ *
+ * @typedef {string[]} PathSegments
+ *
+ * @returns {JSX.Element}
  */
 export default function Breadcrumbs() {
   const { pathSegments: rawSegments } = useCollectionUrl();
+
   const pathSegments = useSafeValue(rawSegments, [], {
     isRequired: true,
     label: "pathSegments",

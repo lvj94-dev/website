@@ -1,16 +1,40 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useContext } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
+// Context
 import { AuthContext } from "@/context/AuthContext";
 
+// Hooks
 import useCollectionUrl from "@/hooks/useCollectionUrl";
+
+// Error handling
+import ErrorBoundary from "@/components/common/ErrorBoundary";
 import useSafeValue from "@/hooks/useSafeValue";
 
+// Styling
 import styles from "./Navbar.module.scss";
-import ErrorBoundary from "@/components/common/ErrorBoundary";
 
+/**
+ * @component
+ * @function Navbar
+ *
+ * @description
+ * Main navigation bar with route links and account-management.
+ * - Home
+ * - Projects
+ * - Components
+ * - Blog
+ * - Login / MyAccount
+ *
+ * @property {objet} auth - Auth object from context.
+ * @property {string|null} token - Auth token, if user is logged in.
+ * @property {string} currentPage - URL of the current page.
+ *
+ * @returns {JSX.Element}
+ */
 export default function Navbar() {
   const auth = useContext(AuthContext);
   const { currentPage: rawPage } = useCollectionUrl();

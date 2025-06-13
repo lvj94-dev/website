@@ -1,5 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Error handling
 import AppError from "./AppError";
 import FormValidationError from "./FormValidationError";
 import AuthRequiredError from "./AuthRequiredError";

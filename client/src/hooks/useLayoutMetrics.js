@@ -1,8 +1,21 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { useEffect, useRef, useState } from "react";
 
-export default function useLayoutMainMetrics() {
+/**
+ * @function useLayoutMetrics
+ *
+ * @description
+ * Custom hook that tracks the width and height of the main area using 'ref' and 'ResizeObserver'.
+ *
+ * @returns {{
+ *   ref: React.RefObject<HTMLElement>,
+ *   width: number,
+ *   height: number
+ * }}
+ */
+export default function useLayoutMetrics() {
   const ref = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 

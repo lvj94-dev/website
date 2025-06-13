@@ -3,6 +3,9 @@
 // React
 import { Outlet } from "react-router-dom";
 
+// Hooks
+import useLayoutMetrics from "@/hooks/useLayoutMetrics";
+
 // UI Components
 import Navbar from "@/components/layout/Navbar/Navbar";
 import Pathbar from "@/components/layout/Pathbar/Pathbar";
@@ -10,11 +13,10 @@ import Footer from "@/components/layout/Footer/Footer";
 
 // Error handling
 import ErrorBoundary from "@/components/common/ErrorBoundary";
+import useSafeValue from "@/hooks/useSafeValue";
 
 // Styling
 import styles from "./Layout.module.scss";
-import useLayoutMainMetrics from "@/hooks/useLayoutMainMetrics";
-import useSafeValue from "@/hooks/useSafeValue";
 
 /**
  * @component
@@ -25,19 +27,18 @@ import useSafeValue from "@/hooks/useSafeValue";
  * - header: Navbar, Pathbar
  * - main: Outlet
  * - footer: Footer
+ *
+ * @property {RefObject<HTMLElement>} ref - Tracks layout size via ResizeObserver
+ *
+ * @returns {JSX.Element}
  */
 export default function Layout() {
-  const { ref: rawRef, height: rawHeight } = useLayoutMainMetrics();
+  const { ref: rawRef } = useLayoutMetrics();
 
   const ref = useSafeValue(rawRef, null, {
     isRequired: true,
-    label: "layoutMain.ref",
+    label: "layout.ref",
   });
-
-  /*const height = useSafeValue(rawHeight, 0, {
-    isRequired: false,
-    label: "layoutMain.height",
-  });*/
 
   return (
     <>

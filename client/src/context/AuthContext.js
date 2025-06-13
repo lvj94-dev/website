@@ -1,11 +1,29 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// React
 import { createContext, useState, useEffect } from "react";
 
+// Error handling
 import useSafeValue from "@/hooks/useSafeValue";
 
 export const AuthContext = createContext();
 
+/**
+ * @component
+ * @function AuthProvider
+ *
+ * @description
+ * Provides authentication state and actions to child components via context.
+ *
+ * @param {object} props
+ * @param {React.ReactNode} props.children - Components that consume the auth context.
+ *
+ * @property {string|null} token - Stored authentication token from localStorage.
+ * @property {(token: string|null) => void} setToken - State setter for updating the auth token.
+ * @property {() => void} logout - Clears
+ *
+ * @returns {JSX.Element} AuthContext
+ */
 export default function AuthProvider({ children }) {
   const [token, setToken] = useState(() => {
     try {

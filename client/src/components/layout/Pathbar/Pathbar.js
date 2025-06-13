@@ -1,12 +1,24 @@
 /* Author: Lucas Vincent Johanningmeier */
 
-import styles from "./Pathbar.module.css";
-
+// UI Components
 import Breadcrumbs from "@/components/layout/Breadcrumbs/Breadcrumbs";
 import ButtonGoBack from "@/components/ui/ButtonGoBack/ButtonGoBack";
 
+// Error handling
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
+// Styling
+import styles from "./Pathbar.module.css";
+
+/**
+ * @component
+ * @function Pathbar
+ *
+ * @description
+ * Secondary navigation bar with breadcrumbs and "Go back"-button.
+ *
+ * @returns {JSX.Element}
+ */
 export default function Pathbar() {
   return (
     <>
