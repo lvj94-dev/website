@@ -21,13 +21,7 @@ import useSafeValue from "./useSafeValue";
  * @description
  * Curstom hook for working with the current URL path.
  *
- * @returns {{
- *   location: ReturnType<typeof useLocation>,
- *   pathSegments: string[],
- *   currentPage: string,
- *   navigate: ReturnType<typeof useNavigate>,
- *   handleGoBack: Function
- * }}
+ * @returns {CollectionUrlData}
  */
 export default function useCollectionUrl() {
   const location = useLocation();

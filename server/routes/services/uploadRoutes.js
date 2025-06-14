@@ -1,9 +1,9 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Express
 import express from "express";
 
-import { uploadService } from "../src/services/uploadService.js";
-
+// Utilities
 import { asyncHandler } from "../../src/utils/asyncHandler.js";
 
 const router = express.Router();

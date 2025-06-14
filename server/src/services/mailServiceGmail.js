@@ -1,9 +1,26 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Third-party
 import nodemailer from "nodemailer";
 
+// Error handling
 import { ServiceError } from "../errors/index.js";
 
+/**
+ * @function sendMailGmail
+ *
+ * @description
+ * Sens an e-mail using Gmail's SMTP service.
+ *
+ * @param {Object} options
+ * @param {string} options.senderName
+ * @param {string} options.to
+ * @param {string} options.subject
+ * @param {string} options.message
+ * @param {string} [options.replyTo]
+ *
+ * @returns {Promise<void>}
+ */
 export const sendMailGmail = async ({
   senderName,
   to,
@@ -37,6 +54,7 @@ export const sendMailGmail = async ({
 /**
  * NOTES
  * - here in use : Gmail
+ * - (T) Create a @typedef for MailOptions (!)
  *
  * (DONE)
  * - idea : implement my own e-mail provider to receive the message myself (!)

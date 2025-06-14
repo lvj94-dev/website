@@ -1,11 +1,25 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Third-party
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+
+// Database
 import db from "../../db/database.js";
 
+// Error handling
 import { NotFoundError, UnauthorizedError } from "../errors/index.js";
 
+/**
+ * @function getUserByUsername
+ *
+ * @description
+ * Retrieves a user record by username from the database.
+ *
+ * @param {string} username
+ *
+ * @returns {Error}
+ */
 const getUserByUsername = (username) => {
   return new Promise((resolve, reject) => {
     const sql = `SELECT * FROM users WHERE username = ?`;
@@ -23,6 +37,17 @@ const getUserByUsername = (username) => {
   });
 };
 
+/**
+ * @function authenticateUser
+ *
+ * @description
+ * Authenticates a user by veryfying credentials and issuing a JWT.
+ *
+ * @param {string} username
+ * @param {string} password
+ *
+ * @returns {Promise<string} A signed JWT token if authentication is successful.
+ */
 export const authenticateUser = async (username, password) => {
   const user = await getUserByUsername(username);
 

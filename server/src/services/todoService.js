@@ -1,8 +1,10 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Node
 import fs from "fs";
 import path from "path";
 
+// Utilities
 import { getFileTree } from "../utils/fileUtils.js";
 
 const REGEX_TODO = /\/\/.*\[TODO\].*|\/\*[\s\S]*?\[TODO\][\s\S]*?\*\//g;
@@ -12,6 +14,16 @@ const projectRoot = path.resolve(
   "../../../"
 );
 
+/**
+ * @function flattenFiles
+ *
+ * @description
+ * Recursively flattens a file tree into a list of absolute paths ot JS files.
+ *
+ * @param {Array<Object>} tree
+ *
+ * @returns {string[]} Array of absolute file paths.
+ */
 function flattenFiles(tree) {
   const files = [];
 
@@ -26,6 +38,14 @@ function flattenFiles(tree) {
   return files;
 }
 
+/**
+ * @function collectTodos
+ *
+ * @description
+ * Scans the project for [TODO] -comments and returns them with file context.
+ *
+ * @returns {Array<{file: string, comment: string}>}
+ */
 export function collectTodos() {
   const tree = getFileTree(projectRoot);
   const files = flattenFiles(tree);

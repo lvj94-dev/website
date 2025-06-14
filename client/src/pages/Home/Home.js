@@ -172,7 +172,7 @@ export default function Home() {
 
             <li>
               JSDocs
-              <li>ADD @throws</li>
+              <li>ADD @throws !?</li>
               <li>
                 "What to do if locally declared variable is also being
                 returned?"
@@ -207,6 +207,7 @@ export default function Home() {
                 ??? better this or in the file where it belongs for then a
                 change won't be missed so easily ???
               </li>
+              <li>(T) think of a final order or all @ (!)</li>
             </li>
           </ul>
         </div>

@@ -1,5 +1,6 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Third-party
 import { Pool } from "pg";
 
 const pool = new Pool({

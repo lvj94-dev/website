@@ -1,7 +1,10 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Node
 import path from "path";
 import { fileURLToPath } from "url";
+
+// Third-party
 import dotenv from "dotenv";
 
 const __filename = fileURLToPath(import.meta.url);

@@ -1,16 +1,33 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Express
 import express from "express";
+
+// Third-party
 import bcrypt from "bcrypt";
 
+// Databse
 import db from "../../db/database.js";
 import { createUser, getAllUsers } from "../../db/queries/users.js";
 
+// Types
+/** @typedef {import("../../../types/server-types.js").ExpressHandler} ExpressHandler */
+
+// Error handling
 import { ValidationError, HttpError } from "../../src/errors/index.js";
 
 const router = express.Router();
 
-// POST /api/users - createUser()
+/**
+ * @route POST /api/users
+ * @function createUser~
+ * @type {ExpressHandler}
+ *
+ * @description
+ * Creates a new user, requires 'username' and 'password'.
+ *
+ * @returns {void}
+ */
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
 
@@ -32,6 +49,15 @@ router.post("/", async (req, res) => {
 });
 
 // GET /api/users - getAllUsers()
+/**
+ * @route GET /api/users
+ * @function getAlLUsers~
+ *
+ * @description
+ * Returns a list of all registered users.
+ *
+ * @returns {void}
+ */
 router.get("/", async (req, res) => {
   try {
     const users = await getAllUsers(db);

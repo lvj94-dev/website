@@ -1,9 +1,21 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Types
+/** @typedef {import("../../../types/server-types.js").ExpressHandler} ExpressHandler */
+
+// Services
 import { sendMailGmail } from "../services/mailServiceGmail.js";
 
+// Error handling
 import { ValidationError, HttpError, ServiceError } from "../errors/index.js";
 
+/**
+ * @function mailServiceGmail
+ * @type {ExpressHandler}
+ *
+ * @description
+ * Handles sending an e-mail via Gmail using the contact form data.
+ */
 export const mailServiceGmail = async (req, res, next) => {
   const { senderName, to, subject, message, replyTo } = req.body;
 

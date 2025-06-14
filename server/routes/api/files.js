@@ -1,10 +1,18 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Express
 import express from "express";
+
+// Node
 import fs from "fs";
 
+// Types
+/** @typedef {import("../../../types/server-types.js").ExpressHandler} ExpressHandler */
+
+// Utilities
 import { getFileTree, resolveSafePath } from "../../src/utils/fileUtils.js";
 
+// Error handling
 import {
   ValidationError,
   NotFoundError,
@@ -13,7 +21,14 @@ import {
 
 const router = express.Router();
 
-// GET /api/files/tree - getFileTre()
+/**
+ * @route GET /api/files/tree
+ * @function getFileTree~
+ * @type {ExpressHandler}
+ *
+ * @description
+ * Returns a JSON-representation of the file tree rooted at the project directory.
+ */
 router.get("/tree", async (req, res, next) => {
   try {
     const tree = getFileTree(resolveSafePath("").projectRoot);
@@ -24,6 +39,14 @@ router.get("/tree", async (req, res, next) => {
 });
 
 // GET /api/files/content - get
+/**
+ * @route GET /api/files/content
+ * @function getFileContent~
+ * @type {ExpressHandler}
+ *
+ * @description
+ * Returns the content of a specified file.
+ */
 router.get("/content", async (req, res, next) => {
   try {
     const { path: relativePath } = req.query;

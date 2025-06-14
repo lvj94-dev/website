@@ -5,12 +5,5 @@
     "paths": {
       "@/*": ["*"]
     }
-  },
-  "include": [
-    "src",
-    "../_DEL/LayoutMain",
-    "../_DEL/links-projects.js",
-    "../_DEL/componentsConfig.js",
-    "../_DEL/VerticalLine"
-  ]
+  }
 }

@@ -3,7 +3,7 @@
 // Hooks
 import useCollectionUrl from "@/hooks/useCollectionUrl";
 
-// UI Components
+// Components
 import MapLinks from "@/components/ui/MapLinks/MapLinks";
 
 // Utilities

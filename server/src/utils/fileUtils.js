@@ -1,8 +1,11 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Node
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+
+// Third-party
 import ignore from "ignore";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,6 +18,17 @@ if (fs.existsSync(gitignorePath)) {
   ig.add(fs.readFileSync(gitignorePath, "utf-8"));
 }
 
+/**
+ * @function getFileTree
+ *
+ * @description
+ * Recursively builds a tree structure of files and directories,
+ * respecting '.gitignore' exclusions. (!)
+ *
+ * @param {string} dir
+ *
+ * @returns {Array<Object>} File tree with nodes containing 'type', 'name', and optionally 'children' or 'path'.
+ */
 function getFileTree(dir) {
   const result = [];
 
@@ -45,6 +59,16 @@ function getFileTree(dir) {
   return result;
 }
 
+/**
+ * @function resolveSafePath
+ *
+ * @description
+ * Resolves a given relative file path within the project root.
+ *
+ * @param {string} [relativePath=""]
+ *
+ * @returns {{ safePath: string, projectRoot: string }}
+ */
 function resolveSafePath(relativePath) {
   const safePath = path.join(projectRoot, relativePath || "");
 

@@ -1,8 +1,12 @@
 /* Author: Lucas Vincent Johanningmeier */
 
+// Configuration
 import "./config/env.js";
 
+// Express
 import express from "express";
+
+// Third-party
 import cors from "cors";
 
 const app = express();
